@@ -1,0 +1,33 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0105_Lambda_3/NumTestInterface5.class
+  Last modified 19 февр. 2023 г.; size 153 bytes
+  SHA-256 checksum 977e77c48968d147b4950f08ee8608fb0559cd9d22a16767e238f0799ba34b8e
+  Compiled from "NumTestInterface5.java"
+public interface e0105_Lambda_3.NumTestInterface5
+  minor version: 0
+  major version: 61
+  flags: (0x0601) ACC_PUBLIC, ACC_INTERFACE, ACC_ABSTRACT
+  this_class: #1                          // e0105_Lambda_3/NumTestInterface5
+  super_class: #3                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 1, attributes: 1
+Constant pool:
+  #1 = Class              #2              // e0105_Lambda_3/NumTestInterface5
+  #2 = Utf8               e0105_Lambda_3/NumTestInterface5
+  #3 = Class              #4              // java/lang/Object
+  #4 = Utf8               java/lang/Object
+  #5 = Utf8               test
+  #6 = Utf8               (II)Z
+  #7 = Utf8               SourceFile
+  #8 = Utf8               NumTestInterface5.java
+{
+  public abstract boolean test(int, int);
+    descriptor: (II)Z
+    flags: (0x0401) ACC_PUBLIC, ACC_ABSTRACT
+}
+SourceFile: "NumTestInterface5.java"
+#############################################################################################
+package e0105_Lambda_3;
+
+public interface NumTestInterface5 {
+    boolean test(int n, int d);
+}
+---------------------------------------------------------------------------------------------

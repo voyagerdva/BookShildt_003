@@ -1,0 +1,159 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0106_Lambda_4_block/AppLambdaDemo6.class
+  Last modified 19 февр. 2023 г.; size 1145 bytes
+  SHA-256 checksum 01980e2e7bd92ff50d8a376073a33636601479269d9281f6883b27773bb298a2
+  Compiled from "AppLambdaDemo6.java"
+public class e0106_Lambda_4_block.AppLambdaDemo6
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #11                         // e0106_Lambda_4_block/AppLambdaDemo6
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 3, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = InvokeDynamic      #0:#8          // #0:func:()Le0106_Lambda_4_block/NumFuncInterface6;
+   #8 = NameAndType        #9:#10         // func:()Le0106_Lambda_4_block/NumFuncInterface6;
+   #9 = Utf8               func
+  #10 = Utf8               ()Le0106_Lambda_4_block/NumFuncInterface6;
+  #11 = Class              #12            // e0106_Lambda_4_block/AppLambdaDemo6
+  #12 = Utf8               e0106_Lambda_4_block/AppLambdaDemo6
+  #13 = Utf8               Code
+  #14 = Utf8               LineNumberTable
+  #15 = Utf8               LocalVariableTable
+  #16 = Utf8               this
+  #17 = Utf8               Le0106_Lambda_4_block/AppLambdaDemo6;
+  #18 = Utf8               run
+  #19 = Utf8               factorial
+  #20 = Utf8               Le0106_Lambda_4_block/NumFuncInterface6;
+  #21 = Utf8               lambda$run$0
+  #22 = Utf8               (I)I
+  #23 = Utf8               i
+  #24 = Utf8               I
+  #25 = Utf8               n
+  #26 = Utf8               result
+  #27 = Utf8               StackMapTable
+  #28 = Utf8               SourceFile
+  #29 = Utf8               AppLambdaDemo6.java
+  #30 = Utf8               BootstrapMethods
+  #31 = MethodHandle       6:#32          // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #32 = Methodref          #33.#34        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #33 = Class              #35            // java/lang/invoke/LambdaMetafactory
+  #34 = NameAndType        #36:#37        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #35 = Utf8               java/lang/invoke/LambdaMetafactory
+  #36 = Utf8               metafactory
+  #37 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #38 = MethodType         #22            //  (I)I
+  #39 = MethodHandle       6:#40          // REF_invokeStatic e0106_Lambda_4_block/AppLambdaDemo6.lambda$run$0:(I)I
+  #40 = Methodref          #11.#41        // e0106_Lambda_4_block/AppLambdaDemo6.lambda$run$0:(I)I
+  #41 = NameAndType        #21:#22        // lambda$run$0:(I)I
+  #42 = Utf8               InnerClasses
+  #43 = Class              #44            // java/lang/invoke/MethodHandles$Lookup
+  #44 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #45 = Class              #46            // java/lang/invoke/MethodHandles
+  #46 = Utf8               java/lang/invoke/MethodHandles
+  #47 = Utf8               Lookup
+{
+  public e0106_Lambda_4_block.AppLambdaDemo6();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Le0106_Lambda_4_block/AppLambdaDemo6;
+
+  public void run();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=2, args_size=1
+         0: invokedynamic #7,  0              // InvokeDynamic #0:func:()Le0106_Lambda_4_block/NumFuncInterface6;
+         5: astore_1
+         6: return
+      LineNumberTable:
+        line 5: 0
+        line 19: 6
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       7     0  this   Le0106_Lambda_4_block/AppLambdaDemo6;
+            6       1     1 factorial   Le0106_Lambda_4_block/NumFuncInterface6;
+
+  private static int lambda$run$0(int);
+    descriptor: (I)I
+    flags: (0x100a) ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: iconst_1
+         1: istore_1
+         2: iconst_1
+         3: istore_2
+         4: iload_2
+         5: iload_0
+         6: if_icmpgt     19
+         9: iload_2
+        10: iload_1
+        11: imul
+        12: istore_1
+        13: iinc          2, 1
+        16: goto          4
+        19: iload_1
+        20: ireturn
+      LineNumberTable:
+        line 6: 0
+        line 8: 2
+        line 9: 9
+        line 8: 13
+        line 12: 19
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            4      15     2     i   I
+            0      21     0     n   I
+            2      19     1 result   I
+      StackMapTable: number_of_entries = 2
+        frame_type = 253 /* append */
+          offset_delta = 4
+          locals = [ int, int ]
+        frame_type = 250 /* chop */
+          offset_delta = 14
+}
+SourceFile: "AppLambdaDemo6.java"
+BootstrapMethods:
+  0: #31 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #38 (I)I
+      #39 REF_invokeStatic e0106_Lambda_4_block/AppLambdaDemo6.lambda$run$0:(I)I
+      #38 (I)I
+InnerClasses:
+  public static final #47= #43 of #45;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+#############################################################################################
+package e0106_Lambda_4_block;
+
+public class AppLambdaDemo6 {
+    public void run() {
+        NumFuncInterface6 factorial = (n) -> {
+            int result = 1;
+
+            for (int i = 1; i <= n; i++) {
+                result = i * result;
+            }
+
+            return result;
+        };
+
+//        System.out.println("Factorial is: " + factorial.func(3));
+//        System.out.println("Factorial is: " + factorial.func(6));
+
+
+    }
+}
+---------------------------------------------------------------------------------------------

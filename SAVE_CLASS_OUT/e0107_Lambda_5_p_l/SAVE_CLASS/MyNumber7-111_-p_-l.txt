@@ -1,0 +1,33 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0107_Lambda_5_p_l/MyNumber7.class
+  Last modified 19 февр. 2023 г.; size 143 bytes
+  SHA-256 checksum 637f54824cab7cf62d85dc57bf1c5d1d1cbb103659bf018ee8d500d5f9b3f194
+  Compiled from "MyNumber7.java"
+public interface e0107_Lambda_5_p_l.MyNumber7
+  minor version: 0
+  major version: 61
+  flags: (0x0601) ACC_PUBLIC, ACC_INTERFACE, ACC_ABSTRACT
+  this_class: #1                          // e0107_Lambda_5_p_l/MyNumber7
+  super_class: #3                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 1, attributes: 1
+Constant pool:
+  #1 = Class              #2              // e0107_Lambda_5_p_l/MyNumber7
+  #2 = Utf8               e0107_Lambda_5_p_l/MyNumber7
+  #3 = Class              #4              // java/lang/Object
+  #4 = Utf8               java/lang/Object
+  #5 = Utf8               getValue
+  #6 = Utf8               ()D
+  #7 = Utf8               SourceFile
+  #8 = Utf8               MyNumber7.java
+{
+  public abstract double getValue();
+    descriptor: ()D
+    flags: (0x0401) ACC_PUBLIC, ACC_ABSTRACT
+}
+SourceFile: "MyNumber7.java"
+#############################################################################################
+package e0107_Lambda_5_p_l;
+
+public interface MyNumber7 {
+    double getValue();
+}
+---------------------------------------------------------------------------------------------

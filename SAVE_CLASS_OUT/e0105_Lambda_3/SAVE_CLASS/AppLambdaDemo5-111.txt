@@ -1,0 +1,159 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0105_Lambda_3/AppLambdaDemo5.class
+  Last modified 19 февр. 2023 г.; size 1372 bytes
+  SHA-256 checksum 504f5ae9092335c596da4c179b99402f428410267687a50b8ca1f6da78bd34cf
+  Compiled from "AppLambdaDemo5.java"
+public class e0105_Lambda_3.AppLambdaDemo5
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #32                         // e0105_Lambda_3/AppLambdaDemo5
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 3, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = InvokeDynamic      #0:#8          // #0:test:()Le0105_Lambda_3/NumTestInterface5;
+   #8 = NameAndType        #9:#10         // test:()Le0105_Lambda_3/NumTestInterface5;
+   #9 = Utf8               test
+  #10 = Utf8               ()Le0105_Lambda_3/NumTestInterface5;
+  #11 = InterfaceMethodref #12.#13        // e0105_Lambda_3/NumTestInterface5.test:(II)Z
+  #12 = Class              #14            // e0105_Lambda_3/NumTestInterface5
+  #13 = NameAndType        #9:#15         // test:(II)Z
+  #14 = Utf8               e0105_Lambda_3/NumTestInterface5
+  #15 = Utf8               (II)Z
+  #16 = Fieldref           #17.#18        // java/lang/System.out:Ljava/io/PrintStream;
+  #17 = Class              #19            // java/lang/System
+  #18 = NameAndType        #20:#21        // out:Ljava/io/PrintStream;
+  #19 = Utf8               java/lang/System
+  #20 = Utf8               out
+  #21 = Utf8               Ljava/io/PrintStream;
+  #22 = String             #23            // 2 is factor of 10
+  #23 = Utf8               2 is factor of 10
+  #24 = Methodref          #25.#26        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #25 = Class              #27            // java/io/PrintStream
+  #26 = NameAndType        #28:#29        // println:(Ljava/lang/String;)V
+  #27 = Utf8               java/io/PrintStream
+  #28 = Utf8               println
+  #29 = Utf8               (Ljava/lang/String;)V
+  #30 = String             #31            // 3 is not factor of 10
+  #31 = Utf8               3 is not factor of 10
+  #32 = Class              #33            // e0105_Lambda_3/AppLambdaDemo5
+  #33 = Utf8               e0105_Lambda_3/AppLambdaDemo5
+  #34 = Utf8               Code
+  #35 = Utf8               LineNumberTable
+  #36 = Utf8               LocalVariableTable
+  #37 = Utf8               this
+  #38 = Utf8               Le0105_Lambda_3/AppLambdaDemo5;
+  #39 = Utf8               run
+  #40 = Utf8               isFactor
+  #41 = Utf8               Le0105_Lambda_3/NumTestInterface5;
+  #42 = Utf8               StackMapTable
+  #43 = Utf8               lambda$run$0
+  #44 = Utf8               n
+  #45 = Utf8               I
+  #46 = Utf8               d
+  #47 = Utf8               SourceFile
+  #48 = Utf8               AppLambdaDemo5.java
+  #49 = Utf8               BootstrapMethods
+  #50 = MethodHandle       6:#51          // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #51 = Methodref          #52.#53        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #52 = Class              #54            // java/lang/invoke/LambdaMetafactory
+  #53 = NameAndType        #55:#56        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #54 = Utf8               java/lang/invoke/LambdaMetafactory
+  #55 = Utf8               metafactory
+  #56 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #57 = MethodType         #15            //  (II)Z
+  #58 = MethodHandle       6:#59          // REF_invokeStatic e0105_Lambda_3/AppLambdaDemo5.lambda$run$0:(II)Z
+  #59 = Methodref          #32.#60        // e0105_Lambda_3/AppLambdaDemo5.lambda$run$0:(II)Z
+  #60 = NameAndType        #43:#15        // lambda$run$0:(II)Z
+  #61 = Utf8               InnerClasses
+  #62 = Class              #63            // java/lang/invoke/MethodHandles$Lookup
+  #63 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #64 = Class              #65            // java/lang/invoke/MethodHandles
+  #65 = Utf8               java/lang/invoke/MethodHandles
+  #66 = Utf8               Lookup
+{
+  public e0105_Lambda_3.AppLambdaDemo5();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Le0105_Lambda_3/AppLambdaDemo5;
+
+  public void run();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=2, args_size=1
+         0: invokedynamic #7,  0              // InvokeDynamic #0:test:()Le0105_Lambda_3/NumTestInterface5;
+         5: astore_1
+         6: aload_1
+         7: bipush        10
+         9: iconst_2
+        10: invokeinterface #11,  3           // InterfaceMethod e0105_Lambda_3/NumTestInterface5.test:(II)Z
+        15: ifeq          26
+        18: getstatic     #16                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        21: ldc           #22                 // String 2 is factor of 10
+        23: invokevirtual #24                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        26: aload_1
+        27: bipush        10
+        29: iconst_3
+        30: invokeinterface #11,  3           // InterfaceMethod e0105_Lambda_3/NumTestInterface5.test:(II)Z
+        35: ifne          46
+        38: getstatic     #16                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        41: ldc           #30                 // String 3 is not factor of 10
+        43: invokevirtual #24                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        46: return
+      LineNumberTable:
+        line 5: 0
+        line 7: 6
+        line 8: 18
+        line 10: 26
+        line 11: 38
+        line 13: 46
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      47     0  this   Le0105_Lambda_3/AppLambdaDemo5;
+            6      41     1 isFactor   Le0105_Lambda_3/NumTestInterface5;
+      StackMapTable: number_of_entries = 2
+        frame_type = 252 /* append */
+          offset_delta = 26
+          locals = [ class e0105_Lambda_3/NumTestInterface5 ]
+        frame_type = 19 /* same */
+}
+SourceFile: "AppLambdaDemo5.java"
+BootstrapMethods:
+  0: #50 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #57 (II)Z
+      #58 REF_invokeStatic e0105_Lambda_3/AppLambdaDemo5.lambda$run$0:(II)Z
+      #57 (II)Z
+InnerClasses:
+  public static final #66= #62 of #64;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+#############################################################################################
+package e0105_Lambda_3;
+
+public class AppLambdaDemo5 {
+    public void run() {
+        NumTestInterface5 isFactor = (n, d) -> (n % d) == 0;
+
+        if (isFactor.test(10, 2)) {
+            System.out.println("2 is factor of 10");
+        }
+        if (!isFactor.test(10, 3)) {
+            System.out.println("3 is not factor of 10");
+        }
+    }
+}
+---------------------------------------------------------------------------------------------

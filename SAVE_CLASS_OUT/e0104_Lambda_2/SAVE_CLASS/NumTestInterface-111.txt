@@ -1,0 +1,33 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0104_Lambda_2/NumTestInterface.class
+  Last modified 18 февр. 2023 г.; size 150 bytes
+  SHA-256 checksum 77be1aad9392086bed475d8aa9ea8e129333c09928bb9efc14bfff6115c2274a
+  Compiled from "NumTestInterface.java"
+public interface e0104_Lambda_2.NumTestInterface
+  minor version: 0
+  major version: 61
+  flags: (0x0601) ACC_PUBLIC, ACC_INTERFACE, ACC_ABSTRACT
+  this_class: #1                          // e0104_Lambda_2/NumTestInterface
+  super_class: #3                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 1, attributes: 1
+Constant pool:
+  #1 = Class              #2              // e0104_Lambda_2/NumTestInterface
+  #2 = Utf8               e0104_Lambda_2/NumTestInterface
+  #3 = Class              #4              // java/lang/Object
+  #4 = Utf8               java/lang/Object
+  #5 = Utf8               test
+  #6 = Utf8               (I)Z
+  #7 = Utf8               SourceFile
+  #8 = Utf8               NumTestInterface.java
+{
+  public abstract boolean test(int);
+    descriptor: (I)Z
+    flags: (0x0401) ACC_PUBLIC, ACC_ABSTRACT
+}
+SourceFile: "NumTestInterface.java"
+#############################################################################################
+package e0104_Lambda_2;
+
+public interface NumTestInterface {
+    boolean test(int n);
+}
+---------------------------------------------------------------------------------------------

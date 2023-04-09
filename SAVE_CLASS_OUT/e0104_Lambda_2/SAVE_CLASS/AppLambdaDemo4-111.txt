@@ -1,0 +1,228 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0104_Lambda_2/AppLambdaDemo4.class
+  Last modified 18 ����. 2023 �.; size 1603 bytes
+  SHA-256 checksum d30ce20997f169ac1f327ec5d2a76b38800b5cc021c21322d130f6ab26e8de10
+  Compiled from "AppLambdaDemo4.java"
+public class e0104_Lambda_2.AppLambdaDemo4
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #37                         // e0104_Lambda_2/AppLambdaDemo4
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 4, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = InvokeDynamic      #0:#8          // #0:test:()Le0104_Lambda_2/NumTestInterface;
+   #8 = NameAndType        #9:#10         // test:()Le0104_Lambda_2/NumTestInterface;
+   #9 = Utf8               test
+  #10 = Utf8               ()Le0104_Lambda_2/NumTestInterface;
+  #11 = InterfaceMethodref #12.#13        // e0104_Lambda_2/NumTestInterface.test:(I)Z
+  #12 = Class              #14            // e0104_Lambda_2/NumTestInterface
+  #13 = NameAndType        #9:#15         // test:(I)Z
+  #14 = Utf8               e0104_Lambda_2/NumTestInterface
+  #15 = Utf8               (I)Z
+  
+  #16 = Fieldref           #17.#18        // java/lang/System.out:Ljava/io/PrintStream;
+  #17 = Class              #19            // java/lang/System
+  #18 = NameAndType        #20:#21        // out:Ljava/io/PrintStream;
+  #19 = Utf8               java/lang/System
+  #20 = Utf8               out
+  #21 = Utf8               Ljava/io/PrintStream;
+  
+  #22 = String             #23            // Dig 10 is even
+  #23 = Utf8               Dig 10 is even
+  
+  #24 = Methodref          #25.#26        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #25 = Class              #27            // java/io/PrintStream
+  #26 = NameAndType        #28:#29        // println:(Ljava/lang/String;)V
+  #27 = Utf8               java/io/PrintStream
+  #28 = Utf8               println
+  #29 = Utf8               (Ljava/lang/String;)V
+  
+  #30 = String             #31            // Dig 9 is not even
+  #31 = Utf8               Dig 9 is not even
+  
+  #32 = InvokeDynamic      #1:#8          // #1:test:()Le0104_Lambda_2/NumTestInterface;
+  
+  #33 = String             #34            // Dig 58 is positiv
+  #34 = Utf8               Dig 58 is positiv
+  
+  #35 = String             #36            // Dig -39 is negativ
+  #36 = Utf8               Dig -39 is negativ
+  #37 = Class              #38            // e0104_Lambda_2/AppLambdaDemo4
+  #38 = Utf8               e0104_Lambda_2/AppLambdaDemo4
+  #39 = Utf8               Code
+  #40 = Utf8               LineNumberTable
+  #41 = Utf8               LocalVariableTable
+  #42 = Utf8               this
+  #43 = Utf8               Le0104_Lambda_2/AppLambdaDemo4;
+  #44 = Utf8               run
+  #45 = Utf8               isEven
+  #46 = Utf8               Le0104_Lambda_2/NumTestInterface;
+  #47 = Utf8               isNonNeg
+  #48 = Utf8               StackMapTable
+  #49 = Utf8               lambda$run$1
+  #50 = Utf8               n
+  #51 = Utf8               I
+  #52 = Utf8               lambda$run$0
+  #53 = Utf8               SourceFile
+  #54 = Utf8               AppLambdaDemo4.java
+  #55 = Utf8               BootstrapMethods
+  
+  #56 = MethodHandle       6:#57          // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #57 = Methodref          #58.#59        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #58 = Class              #60            // java/lang/invoke/LambdaMetafactory
+  #59 = NameAndType        #61:#62        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #60 = Utf8               java/lang/invoke/LambdaMetafactory
+  #61 = Utf8               metafactory
+  #62 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  
+  #63 = MethodType         #15            //  (I)Z
+  
+  #64 = MethodHandle       6:#65          // REF_invokeStatic e0104_Lambda_2/AppLambdaDemo4.lambda$run$0:(I)Z
+  #65 = Methodref          #37.#66        // e0104_Lambda_2/AppLambdaDemo4.lambda$run$0:(I)Z
+  #66 = NameAndType        #52:#15        // lambda$run$0:(I)Z
+  
+  #67 = MethodHandle       6:#68          // REF_invokeStatic e0104_Lambda_2/AppLambdaDemo4.lambda$run$1:(I)Z
+  #68 = Methodref          #37.#69        // e0104_Lambda_2/AppLambdaDemo4.lambda$run$1:(I)Z
+  #69 = NameAndType        #49:#15        // lambda$run$1:(I)Z
+  
+  #70 = Utf8               InnerClasses
+  #71 = Class              #72            // java/lang/invoke/MethodHandles$Lookup
+  #72 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  
+  #73 = Class              #74            // java/lang/invoke/MethodHandles
+  #74 = Utf8               java/lang/invoke/MethodHandles
+  
+  #75 = Utf8               Lookup
+{
+  public e0104_Lambda_2.AppLambdaDemo4();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Le0104_Lambda_2/AppLambdaDemo4;
+
+  public void run();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: invokedynamic #7,  0              // InvokeDynamic #0:test:()Le0104_Lambda_2/NumTestInterface;
+         5: astore_1
+  
+         6: aload_1
+         7: bipush        10
+         9: invokeinterface #11,  2           // InterfaceMethod e0104_Lambda_2/NumTestInterface.test:(I)Z
+        14: ifeq          25
+        17: getstatic     #16                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        20: ldc           #22                 // String Dig 10 is even
+        22: invokevirtual #24                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+
+        25: aload_1
+        26: bipush        9
+        28: invokeinterface #11,  2           // InterfaceMethod e0104_Lambda_2/NumTestInterface.test:(I)Z
+        33: ifne          44
+        36: getstatic     #16                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        39: ldc           #30                 // String Dig 9 is not even
+        41: invokevirtual #24                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        
+        44: invokedynamic #32,  0             // InvokeDynamic #1:test:()Le0104_Lambda_2/NumTestInterface;
+        49: astore_2
+        
+        50: aload_2
+        51: bipush        58
+        53: invokeinterface #11,  2           // InterfaceMethod e0104_Lambda_2/NumTestInterface.test:(I)Z
+        58: ifeq          69
+        61: getstatic     #16                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        64: ldc           #33                 // String Dig 58 is positiv
+        66: invokevirtual #24                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        
+        69: aload_2
+        70: bipush        -39
+        72: invokeinterface #11,  2           // InterfaceMethod e0104_Lambda_2/NumTestInterface.test:(I)Z
+        77: ifne          88
+        80: getstatic     #16                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        83: ldc           #35                 // String Dig -39 is negativ
+        85: invokevirtual #24                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        
+        88: return
+      LineNumberTable:
+        line 5: 0
+        line 7: 6
+        line 8: 17
+        line 11: 25
+        line 12: 36
+        line 15: 44
+        line 17: 50
+        line 18: 61
+        line 20: 69
+        line 21: 80
+        line 24: 88
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      89     0  this   Le0104_Lambda_2/AppLambdaDemo4;
+            6      83     1 isEven   Le0104_Lambda_2/NumTestInterface;
+           50      39     2 isNonNeg   Le0104_Lambda_2/NumTestInterface;
+      StackMapTable: number_of_entries = 4
+        frame_type = 252 /* append */  
+          offset_delta = 25
+          locals = [ class e0104_Lambda_2/NumTestInterface ]
+        frame_type = 18 /* same */ 
+        frame_type = 252 /* append */ 
+          offset_delta = 24
+          locals = [ class e0104_Lambda_2/NumTestInterface ]
+        frame_type = 18 /* same */ 
+}
+SourceFile: "AppLambdaDemo4.java"
+BootstrapMethods:
+  0: #56 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #63 (I)Z
+      #64 REF_invokeStatic e0104_Lambda_2/AppLambdaDemo4.lambda$run$0:(I)Z
+      #63 (I)Z
+  1: #56 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #63 (I)Z
+      #67 REF_invokeStatic e0104_Lambda_2/AppLambdaDemo4.lambda$run$1:(I)Z
+      #63 (I)Z
+InnerClasses:
+  public static final #75= #71 of #73;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+#############################################################################################
+package e0104_Lambda_2;
+
+public class AppLambdaDemo4 {
+    public void run() {
+        NumTestInterface isEven = (n) -> (n % 2) == 0;
+
+        if (isEven.test(10)) {
+            System.out.println("Dig 10 is even");
+        }
+
+        if (!isEven.test(9)) {
+            System.out.println("Dig 9 is not even");
+        }
+
+        NumTestInterface isNonNeg = (n) -> n >= 0;
+
+        if (isNonNeg.test(58)) {
+            System.out.println("Dig 58 is positiv");
+        }
+        if (!isNonNeg.test(-39)) {
+            System.out.println("Dig -39 is negativ");
+        }
+
+    }
+}
+---------------------------------------------------------------------------------------------

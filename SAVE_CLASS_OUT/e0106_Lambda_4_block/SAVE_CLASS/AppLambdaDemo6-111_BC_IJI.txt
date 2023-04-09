@@ -1,0 +1,82 @@
+// class version 61.0 (61)
+// access flags 0x21
+public class e0106_Lambda_4_block/AppLambdaDemo6 {
+
+  // compiled from: AppLambdaDemo6.java
+  // access flags 0x19
+  public final static INNERCLASS java/lang/invoke/MethodHandles$Lookup java/lang/invoke/MethodHandles Lookup
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 3 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+   L1
+    LOCALVARIABLE this Le0106_Lambda_4_block/AppLambdaDemo6; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public run()V
+   L0
+    LINENUMBER 5 L0
+    INVOKEDYNAMIC func()Le0106_Lambda_4_block/NumFuncInterface6; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      (I)I, 
+      // handle kind 0x6 : INVOKESTATIC
+      e0106_Lambda_4_block/AppLambdaDemo6.lambda$run$0(I)I, 
+      (I)I
+    ]
+    ASTORE 1
+    
+   L1
+    LINENUMBER 19 L1
+    RETURN
+    
+   L2
+    LOCALVARIABLE this Le0106_Lambda_4_block/AppLambdaDemo6; L0 L2 0
+    LOCALVARIABLE factorial Le0106_Lambda_4_block/NumFuncInterface6; L1 L2 1
+    MAXSTACK = 1
+    MAXLOCALS = 2
+
+  // access flags 0x100A
+  private static synthetic lambda$run$0(I)I
+   L0
+    LINENUMBER 6 L0
+    ICONST_1
+    ISTORE 1
+   L1
+    LINENUMBER 8 L1
+    ICONST_1
+    ISTORE 2
+   L2
+   FRAME APPEND [I I]
+    ILOAD 2
+    ILOAD 0
+    IF_ICMPGT L3
+   L4
+    LINENUMBER 9 L4
+    ILOAD 2
+    ILOAD 1
+    IMUL
+    ISTORE 1
+   L5
+    LINENUMBER 8 L5
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 12 L3
+   FRAME CHOP 1
+    ILOAD 1
+    IRETURN
+   L6
+    LOCALVARIABLE i I L2 L3 2
+    LOCALVARIABLE n I L0 L6 0
+    LOCALVARIABLE result I L1 L6 1
+    MAXSTACK = 2
+    MAXLOCALS = 3
+}

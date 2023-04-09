@@ -1,0 +1,52 @@
+// class version 61.0 (61)
+// access flags 0x21
+public class e0103_Lambda/AppLambdaDemo {
+
+  // compiled from: AppLambdaDemo.java
+  // access flags 0x19
+  public final static INNERCLASS java/lang/invoke/MethodHandles$Lookup java/lang/invoke/MethodHandles Lookup
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 3 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+   L1
+    LOCALVARIABLE this Le0103_Lambda/AppLambdaDemo; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public run()V
+   L0
+    LINENUMBER 7 L0
+    INVOKEDYNAMIC getValue()Le0103_Lambda/MyNumber3; [
+      // handle kind 0x6 : INVOKESTATIC
+      java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+      // arguments:
+      ()D, 
+      // handle kind 0x6 : INVOKESTATIC
+      e0103_Lambda/AppLambdaDemo.lambda$run$0()D, 
+      ()D
+    ]
+    ASTORE 1
+   L1
+    LINENUMBER 8 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Le0103_Lambda/AppLambdaDemo; L0 L2 0
+    LOCALVARIABLE myNumber3 Le0103_Lambda/MyNumber3; L1 L2 1
+    MAXSTACK = 1
+    MAXLOCALS = 2
+
+  // access flags 0x100A
+  private static synthetic lambda$run$0()D
+   L0
+    LINENUMBER 7 L0
+    LDC 123.45
+    DRETURN
+    MAXSTACK = 2
+    MAXLOCALS = 0
+}

@@ -1,0 +1,47 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0102_Meta_Wildcard_2_training/InterfaceD.class
+  Last modified 18 февр. 2023 г.; size 389 bytes
+  SHA-256 checksum e033f8b8352461782964b88cb987e4fea9d0f70ceb663118a52021997025e073
+  Compiled from "InterfaceD.java"
+public interface e0102_Meta_Wildcard_2_training.InterfaceD<T extends e0102_Meta_Wildcard_2_training.E<?>>
+  minor version: 0
+  major version: 61
+  flags: (0x0601) ACC_PUBLIC, ACC_INTERFACE, ACC_ABSTRACT
+  this_class: #1                          // e0102_Meta_Wildcard_2_training/InterfaceD
+  super_class: #3                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 1, attributes: 2
+Constant pool:
+   #1 = Class              #2             // e0102_Meta_Wildcard_2_training/InterfaceD
+   #2 = Utf8               e0102_Meta_Wildcard_2_training/InterfaceD
+   #3 = Class              #4             // java/lang/Object
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               meth
+   #6 = Utf8               (Le0102_Meta_Wildcard_2_training/E;)Le0102_Meta_Wildcard_2_training/E;
+   #7 = Utf8               Signature
+   #8 = Utf8               (Le0102_Meta_Wildcard_2_training/E<*>;)Le0102_Meta_Wildcard_2_training/E<*>;
+   #9 = Utf8               <T:Le0102_Meta_Wildcard_2_training/E<*>;>Ljava/lang/Object;
+  #10 = Utf8               SourceFile
+  #11 = Utf8               InterfaceD.java
+{
+  public abstract e0102_Meta_Wildcard_2_training.E<?> meth(e0102_Meta_Wildcard_2_training.E<?>);
+    descriptor: (Le0102_Meta_Wildcard_2_training/E;)Le0102_Meta_Wildcard_2_training/E;
+    flags: (0x0401) ACC_PUBLIC, ACC_ABSTRACT
+    Signature: #8                           // (Le0102_Meta_Wildcard_2_training/E<*>;)Le0102_Meta_Wildcard_2_training/E<*>;
+}
+Signature: #9                           // <T:Le0102_Meta_Wildcard_2_training/E<*>;>Ljava/lang/Object;
+SourceFile: "InterfaceD.java"
+#############################################################################################
+package e0102_Meta_Wildcard_2_training;
+
+class E<T> {  }
+
+public interface InterfaceD<T extends E<?>> {
+    E<?> meth(E<?> t);
+}
+
+class D implements InterfaceD<E<?>> {
+    @Override
+    public E<?> meth(E<?> t) {
+        return new E<>();
+    }
+}
+---------------------------------------------------------------------------------------------

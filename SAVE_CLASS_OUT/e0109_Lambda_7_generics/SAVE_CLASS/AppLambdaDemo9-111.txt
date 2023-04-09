@@ -1,0 +1,194 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0109_Lambda_7_generics/AppLambdaDemo9.class
+  Last modified 19 февр. 2023 г.; size 1760 bytes
+  SHA-256 checksum 12d9228052eff04756ce63fbe3255b1c034b6ddc1716daa5ac4a17cf20b14ca2
+  Compiled from "AppLambdaDemo9.java"
+public class e0109_Lambda_7_generics.AppLambdaDemo9
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #27                         // e0109_Lambda_7_generics/AppLambdaDemo9
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 3, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = InvokeDynamic      #0:#8          // #0:func:()Le0109_Lambda_7_generics/SomeFuncInterface;
+   #8 = NameAndType        #9:#10         // func:()Le0109_Lambda_7_generics/SomeFuncInterface;
+   #9 = Utf8               func
+  #10 = Utf8               ()Le0109_Lambda_7_generics/SomeFuncInterface;
+  #11 = String             #12            //
+  #12 = Utf8
+  #13 = Methodref          #14.#15        // java/lang/String.length:()I
+  #14 = Class              #16            // java/lang/String
+  #15 = NameAndType        #17:#18        // length:()I
+  #16 = Utf8               java/lang/String
+  #17 = Utf8               length
+  #18 = Utf8               ()I
+  #19 = Methodref          #14.#20        // java/lang/String.charAt:(I)C
+  #20 = NameAndType        #21:#22        // charAt:(I)C
+  #21 = Utf8               charAt
+  #22 = Utf8               (I)C
+  #23 = InvokeDynamic      #1:#24         // #1:makeConcatWithConstants:(Ljava/lang/String;C)Ljava/lang/String;
+  #24 = NameAndType        #25:#26        // makeConcatWithConstants:(Ljava/lang/String;C)Ljava/lang/String;
+  #25 = Utf8               makeConcatWithConstants
+  #26 = Utf8               (Ljava/lang/String;C)Ljava/lang/String;
+  #27 = Class              #28            // e0109_Lambda_7_generics/AppLambdaDemo9
+  #28 = Utf8               e0109_Lambda_7_generics/AppLambdaDemo9
+  #29 = Utf8               Code
+  #30 = Utf8               LineNumberTable
+  #31 = Utf8               LocalVariableTable
+  #32 = Utf8               this
+  #33 = Utf8               Le0109_Lambda_7_generics/AppLambdaDemo9;
+  #34 = Utf8               run
+  #35 = Utf8               reverse
+  #36 = Utf8               Le0109_Lambda_7_generics/SomeFuncInterface;
+  #37 = Utf8               LocalVariableTypeTable
+  #38 = Utf8               Le0109_Lambda_7_generics/SomeFuncInterface<Ljava/lang/String;>;
+  #39 = Utf8               lambda$run$0
+  #40 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #41 = Utf8               str
+  #42 = Utf8               Ljava/lang/String;
+  #43 = Utf8               result
+  #44 = Utf8               i
+  #45 = Utf8               I
+  #46 = Utf8               StackMapTable
+  #47 = Utf8               SourceFile
+  #48 = Utf8               AppLambdaDemo9.java
+  #49 = Utf8               BootstrapMethods
+  #50 = MethodHandle       6:#51          // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #51 = Methodref          #52.#53        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #52 = Class              #54            // java/lang/invoke/LambdaMetafactory
+  #53 = NameAndType        #55:#56        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #54 = Utf8               java/lang/invoke/LambdaMetafactory
+  #55 = Utf8               metafactory
+  #56 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #57 = MethodType         #58            //  (Ljava/lang/Object;)Ljava/lang/Object;
+  #58 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #59 = MethodHandle       6:#60          // REF_invokeStatic e0109_Lambda_7_generics/AppLambdaDemo9.lambda$run$0:(Ljava/lang/String;)Ljava/lang/String;
+  #60 = Methodref          #27.#61        // e0109_Lambda_7_generics/AppLambdaDemo9.lambda$run$0:(Ljava/lang/String;)Ljava/lang/String;
+  #61 = NameAndType        #39:#40        // lambda$run$0:(Ljava/lang/String;)Ljava/lang/String;
+  #62 = MethodType         #40            //  (Ljava/lang/String;)Ljava/lang/String;
+  #63 = MethodHandle       6:#64          // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #64 = Methodref          #65.#66        // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #65 = Class              #67            // java/lang/invoke/StringConcatFactory
+  #66 = NameAndType        #25:#68        // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #67 = Utf8               java/lang/invoke/StringConcatFactory
+  #68 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #69 = String             #70            // \u0001\u0001
+  #70 = Utf8               \u0001\u0001
+  #71 = Utf8               InnerClasses
+  #72 = Class              #73            // java/lang/invoke/MethodHandles$Lookup
+  #73 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #74 = Class              #75            // java/lang/invoke/MethodHandles
+  #75 = Utf8               java/lang/invoke/MethodHandles
+  #76 = Utf8               Lookup
+{
+  public e0109_Lambda_7_generics.AppLambdaDemo9();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Le0109_Lambda_7_generics/AppLambdaDemo9;
+
+  public void run();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=2, args_size=1
+         0: invokedynamic #7,  0              // InvokeDynamic #0:func:()Le0109_Lambda_7_generics/SomeFuncInterface;
+         5: astore_1
+         6: return
+      LineNumberTable:
+        line 5: 0
+        line 16: 6
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       7     0  this   Le0109_Lambda_7_generics/AppLambdaDemo9;
+            6       1     1 reverse   Le0109_Lambda_7_generics/SomeFuncInterface;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            6       1     1 reverse   Le0109_Lambda_7_generics/SomeFuncInterface<Ljava/lang/String;>;
+
+  private static java.lang.String lambda$run$0(java.lang.String);
+    descriptor: (Ljava/lang/String;)Ljava/lang/String;
+    flags: (0x100a) ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=3, args_size=1
+         0: ldc           #11                 // String
+         2: astore_1
+         3: aload_0
+         4: invokevirtual #13                 // Method java/lang/String.length:()I
+         7: iconst_1
+         8: isub
+         9: istore_2
+        10: iload_2
+        11: iflt          32
+        14: aload_1
+        15: aload_0
+        16: iload_2
+        17: invokevirtual #19                 // Method java/lang/String.charAt:(I)C
+        20: invokedynamic #23,  0             // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;C)Ljava/lang/String;
+        25: astore_1
+        26: iinc          2, -1
+        29: goto          10
+        32: aload_1
+        33: areturn
+      LineNumberTable:
+        line 6: 0
+        line 9: 3
+        line 10: 14
+        line 9: 26
+        line 13: 32
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      34     0   str   Ljava/lang/String;
+            3      31     1 result   Ljava/lang/String;
+           10      24     2     i   I
+      StackMapTable: number_of_entries = 2
+        frame_type = 253 /* append */
+          offset_delta = 10
+          locals = [ class java/lang/String, int ]
+        frame_type = 21 /* same */
+}
+SourceFile: "AppLambdaDemo9.java"
+BootstrapMethods:
+  0: #50 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #57 (Ljava/lang/Object;)Ljava/lang/Object;
+      #59 REF_invokeStatic e0109_Lambda_7_generics/AppLambdaDemo9.lambda$run$0:(Ljava/lang/String;)Ljava/lang/String;
+      #62 (Ljava/lang/String;)Ljava/lang/String;
+  1: #63 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #69 \u0001\u0001
+InnerClasses:
+  public static final #76= #72 of #74;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+#############################################################################################
+package e0109_Lambda_7_generics;
+
+public class AppLambdaDemo9 {
+    public void run() {
+        SomeFuncInterface<String> reverse = (str) -> {
+            String result = "";
+            int i;
+
+            for (i = str.length() - 1; i >= 0; i--) {
+                result += str.charAt(i);
+            }
+
+            return result;
+        };
+
+    }
+}
+---------------------------------------------------------------------------------------------

@@ -1,0 +1,168 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0108_Lambda_6/AppLambdaDemo8.class
+  Last modified 19 февр. 2023 г.; size 1121 bytes
+  SHA-256 checksum 4b053ee46ba8dda42921a271842093b462e209f6b2475b332d77f96d40594a19
+  Compiled from "AppLambdaDemo8.java"
+public class e0108_Lambda_6.AppLambdaDemo8
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #16                         // e0108_Lambda_6/AppLambdaDemo8
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 4, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = InvokeDynamic      #0:#8          // #0:getValue:()Le0108_Lambda_6/MyNumber8;
+   #8 = NameAndType        #9:#10         // getValue:()Le0108_Lambda_6/MyNumber8;
+   #9 = Utf8               getValue
+  #10 = Utf8               ()Le0108_Lambda_6/MyNumber8;
+
+  #11 = InvokeDynamic      #1:#8          // #1:getValue:()Le0108_Lambda_6/MyNumber8;
+  #12 = Double             300.51d
+
+  #14 = Double             123.45d
+  #16 = Class              #17            // e0108_Lambda_6/AppLambdaDemo8
+  #17 = Utf8               e0108_Lambda_6/AppLambdaDemo8
+  #18 = Utf8               Code
+  #19 = Utf8               LineNumberTable
+  #20 = Utf8               LocalVariableTable
+  #21 = Utf8               this
+  #22 = Utf8               Le0108_Lambda_6/AppLambdaDemo8;
+  #23 = Utf8               run
+  #24 = Utf8               myNumber3
+  #25 = Utf8               Le0108_Lambda_6/MyNumber8;
+
+  #26 = Utf8               myNumber31
+
+  #27 = Utf8               lambda$run$1
+  #28 = Utf8               ()D
+
+  #29 = Utf8               lambda$run$0
+
+  #30 = Utf8               SourceFile
+  #31 = Utf8               AppLambdaDemo8.java
+  #32 = Utf8               BootstrapMethods
+
+  #33 = MethodHandle       6:#34          // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #34 = Methodref          #35.#36        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #35 = Class              #37            // java/lang/invoke/LambdaMetafactory
+  #36 = NameAndType        #38:#39        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #37 = Utf8               java/lang/invoke/LambdaMetafactory
+  #38 = Utf8               metafactory
+  #39 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+
+  #40 = MethodType         #28            //  ()D
+  #41 = MethodHandle       6:#42          // REF_invokeStatic e0108_Lambda_6/AppLambdaDemo8.lambda$run$0:()D
+  #42 = Methodref          #16.#43        // e0108_Lambda_6/AppLambdaDemo8.lambda$run$0:()D
+  #43 = NameAndType        #29:#28        // lambda$run$0:()D
+
+  #44 = MethodHandle       6:#45          // REF_invokeStatic e0108_Lambda_6/AppLambdaDemo8.lambda$run$1:()D
+  #45 = Methodref          #16.#46        // e0108_Lambda_6/AppLambdaDemo8.lambda$run$1:()D
+  #46 = NameAndType        #27:#28        // lambda$run$1:()D
+
+  #47 = Utf8               InnerClasses
+  #48 = Class              #49            // java/lang/invoke/MethodHandles$Lookup
+  #49 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #50 = Class              #51            // java/lang/invoke/MethodHandles
+  #51 = Utf8               java/lang/invoke/MethodHandles
+  #52 = Utf8               Lookup
+{
+  public e0108_Lambda_6.AppLambdaDemo8();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Le0108_Lambda_6/AppLambdaDemo8;
+
+  public void run();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=3, args_size=1
+         0: invokedynamic #7,  0              // InvokeDynamic #0:getValue:()Le0108_Lambda_6/MyNumber8;
+         5: astore_1
+
+         6: invokedynamic #11,  0             // InvokeDynamic #1:getValue:()Le0108_Lambda_6/MyNumber8;
+        11: astore_2
+
+        12: return
+      LineNumberTable:
+        line 8: 0
+        line 9: 6
+        line 20: 12
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      13     0  this   Le0108_Lambda_6/AppLambdaDemo8;
+            6       7     1 myNumber3   Le0108_Lambda_6/MyNumber8;
+
+           12       1     2 myNumber31   Le0108_Lambda_6/MyNumber8;
+
+  private static double lambda$run$1();
+    descriptor: ()D
+    flags: (0x100a) ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: ldc2_w        #12                 // double 300.51d
+         3: dreturn
+      LineNumberTable:
+        line 9: 0
+
+  private static double lambda$run$0();
+    descriptor: ()D
+    flags: (0x100a) ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: ldc2_w        #14                 // double 123.45d
+         3: dreturn
+      LineNumberTable:
+        line 8: 0
+}
+SourceFile: "AppLambdaDemo8.java"
+BootstrapMethods:
+  0: #33 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #40 ()D
+      #41 REF_invokeStatic e0108_Lambda_6/AppLambdaDemo8.lambda$run$0:()D
+      #40 ()D
+
+  1: #33 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #40 ()D
+      #44 REF_invokeStatic e0108_Lambda_6/AppLambdaDemo8.lambda$run$1:()D
+      #40 ()D
+InnerClasses:
+  public static final #52= #48 of #50;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+#############################################################################################
+package e0108_Lambda_6;
+
+public class AppLambdaDemo8 {
+    public void run() {
+        MyNumber8 myNumber3;
+        MyNumber8 myNumber31;
+
+        myNumber3 = () -> 123.45;
+        myNumber31 = () -> 300.51;
+
+//        System.out.println("Fixed value: " + myNumber3.getValue());
+
+//        myNumber3 = () -> Math.random() * 100;
+//        myNumber31 = () -> Math.random() * 200;
+
+//        System.out.println("Random value: " + myNumber3.getValue());
+//        System.out.println("Random value 2: " + myNumber3.getValue());
+
+
+    }
+}
+---------------------------------------------------------------------------------------------

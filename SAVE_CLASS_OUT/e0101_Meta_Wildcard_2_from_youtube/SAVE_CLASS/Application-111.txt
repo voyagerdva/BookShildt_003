@@ -1,0 +1,146 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0101_Meta_Wildcard_2_from_youtube/Application.class
+  Last modified 10 февр. 2023 г.; size 1150 bytes
+  SHA-256 checksum dd01a58bef97663210c959b46e8508965e038a3bf1d04ad2c0220eff85b74163
+  Compiled from "Application.java"
+public class e0101_Meta_Wildcard_2_from_youtube.Application
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #41                         // e0101_Meta_Wildcard_2_from_youtube/Application
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 2, attributes: 1
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Class              #8             // e0101_Meta_Wildcard_2_from_youtube/Point
+   #8 = Utf8               e0101_Meta_Wildcard_2_from_youtube/Point
+   #9 = Methodref          #10.#11        // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+  #10 = Class              #12            // java/lang/Integer
+  #11 = NameAndType        #13:#14        // valueOf:(I)Ljava/lang/Integer;
+  #12 = Utf8               java/lang/Integer
+  #13 = Utf8               valueOf
+  #14 = Utf8               (I)Ljava/lang/Integer;
+  #15 = Methodref          #7.#16         // e0101_Meta_Wildcard_2_from_youtube/Point."<init>":(Ljava/lang/Number;Ljava/lang/Number;)V
+  #16 = NameAndType        #5:#17         // "<init>":(Ljava/lang/Number;Ljava/lang/Number;)V
+  #17 = Utf8               (Ljava/lang/Number;Ljava/lang/Number;)V
+  #18 = Methodref          #19.#20        // java/lang/Double.valueOf:(D)Ljava/lang/Double;
+  #19 = Class              #21            // java/lang/Double
+  #20 = NameAndType        #13:#22        // valueOf:(D)Ljava/lang/Double;
+  #21 = Utf8               java/lang/Double
+  #22 = Utf8               (D)Ljava/lang/Double;
+  #23 = Double             2.0d
+  #25 = Methodref          #7.#26         // e0101_Meta_Wildcard_2_from_youtube/Point.equalsPoint:(Le0101_Meta_Wildcard_2_from_youtube/Point;)Z
+  #26 = NameAndType        #27:#28        // equalsPoint:(Le0101_Meta_Wildcard_2_from_youtube/Point;)Z
+  #27 = Utf8               equalsPoint
+  #28 = Utf8               (Le0101_Meta_Wildcard_2_from_youtube/Point;)Z
+  #29 = Fieldref           #30.#31        // java/lang/System.out:Ljava/io/PrintStream;
+  #30 = Class              #32            // java/lang/System
+  #31 = NameAndType        #33:#34        // out:Ljava/io/PrintStream;
+  #32 = Utf8               java/lang/System
+  #33 = Utf8               out
+  #34 = Utf8               Ljava/io/PrintStream;
+  #35 = Methodref          #36.#37        // java/io/PrintStream.println:(Z)V
+  #36 = Class              #38            // java/io/PrintStream
+  #37 = NameAndType        #39:#40        // println:(Z)V
+  #38 = Utf8               java/io/PrintStream
+  #39 = Utf8               println
+  #40 = Utf8               (Z)V
+  #41 = Class              #42            // e0101_Meta_Wildcard_2_from_youtube/Application
+  #42 = Utf8               e0101_Meta_Wildcard_2_from_youtube/Application
+  #43 = Utf8               Code
+  #44 = Utf8               LineNumberTable
+  #45 = Utf8               LocalVariableTable
+  #46 = Utf8               this
+  #47 = Utf8               Le0101_Meta_Wildcard_2_from_youtube/Application;
+  #48 = Utf8               run
+  #49 = Utf8               ptI
+  #50 = Utf8               Le0101_Meta_Wildcard_2_from_youtube/Point;
+  #51 = Utf8               ptD
+  #52 = Utf8               a
+  #53 = Utf8               Z
+  #54 = Utf8               LocalVariableTypeTable
+  #55 = Utf8               Le0101_Meta_Wildcard_2_from_youtube/Point<Ljava/lang/Integer;>;
+  #56 = Utf8               Le0101_Meta_Wildcard_2_from_youtube/Point<Ljava/lang/Double;>;
+  #57 = Utf8               SourceFile
+  #58 = Utf8               Application.java
+{
+  public e0101_Meta_Wildcard_2_from_youtube.Application();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 5: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Le0101_Meta_Wildcard_2_from_youtube/Application;
+
+  public void run();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=4, args_size=1
+         0: new           #7                  // class e0101_Meta_Wildcard_2_from_youtube/Point
+         3: dup
+         4: iconst_1
+         5: invokestatic  #9                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+         8: iconst_2
+         9: invokestatic  #9                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        12: invokespecial #15                 // Method e0101_Meta_Wildcard_2_from_youtube/Point."<init>":(Ljava/lang/Number;Ljava/lang/Number;)V
+        15: astore_1
+        16: new           #7                  // class e0101_Meta_Wildcard_2_from_youtube/Point
+        19: dup
+        20: dconst_1
+        21: invokestatic  #18                 // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+        24: ldc2_w        #23                 // double 2.0d
+        27: invokestatic  #18                 // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+        30: invokespecial #15                 // Method e0101_Meta_Wildcard_2_from_youtube/Point."<init>":(Ljava/lang/Number;Ljava/lang/Number;)V
+        33: astore_2
+        34: aload_1
+        35: aload_2
+        36: invokevirtual #25                 // Method e0101_Meta_Wildcard_2_from_youtube/Point.equalsPoint:(Le0101_Meta_Wildcard_2_from_youtube/Point;)Z
+        39: istore_3
+        40: getstatic     #29                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        43: iload_3
+        44: invokevirtual #35                 // Method java/io/PrintStream.println:(Z)V
+        47: return
+      LineNumberTable:
+        line 7: 0
+        line 8: 16
+        line 10: 34
+        line 11: 40
+        line 12: 47
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      48     0  this   Le0101_Meta_Wildcard_2_from_youtube/Application;
+           16      32     1   ptI   Le0101_Meta_Wildcard_2_from_youtube/Point;
+           34      14     2   ptD   Le0101_Meta_Wildcard_2_from_youtube/Point;
+           40       8     3     a   Z
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           16      32     1   ptI   Le0101_Meta_Wildcard_2_from_youtube/Point<Ljava/lang/Integer;>;
+           34      14     2   ptD   Le0101_Meta_Wildcard_2_from_youtube/Point<Ljava/lang/Double;>;
+}
+SourceFile: "Application.java"
+#############################################################################################
+package e0101_Meta_Wildcard_2_from_youtube;
+
+import java.security.PublicKey;
+
+public class Application {
+    public void run() {
+        Point<Integer> ptI = new Point<>(1, 2);
+        Point<Double> ptD = new Point<>(1.0, 2.0);
+
+        boolean a = ptI.equalsPoint(ptD);
+        System.out.println(a);
+    }
+}
+---------------------------------------------------------------------------------------------

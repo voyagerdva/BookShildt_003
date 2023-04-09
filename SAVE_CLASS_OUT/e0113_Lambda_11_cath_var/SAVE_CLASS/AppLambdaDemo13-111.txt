@@ -1,0 +1,178 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0113_Lambda_11_cath_var/AppLambdaDemo13.class
+  Last modified 21 февр. 2023 г.; size 1603 bytes
+  SHA-256 checksum 1b08bf8b6ccbc99f08f9e9c6da5ebfc11696d6301e045bfb755721bf64d3c152
+  Compiled from "AppLambdaDemo13.java"
+public class e0113_Lambda_11_cath_var.AppLambdaDemo13
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #33                         // e0113_Lambda_11_cath_var/AppLambdaDemo13
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 3, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = InvokeDynamic      #0:#8          // #0:func:(I)Le0113_Lambda_11_cath_var/MyFuncInterface13;
+   #8 = NameAndType        #9:#10         // func:(I)Le0113_Lambda_11_cath_var/MyFuncInterface13;
+   #9 = Utf8               func
+  #10 = Utf8               (I)Le0113_Lambda_11_cath_var/MyFuncInterface13;
+  #11 = Fieldref           #12.#13        // java/lang/System.out:Ljava/io/PrintStream;
+  #12 = Class              #14            // java/lang/System
+  #13 = NameAndType        #15:#16        // out:Ljava/io/PrintStream;
+  #14 = Utf8               java/lang/System
+  #15 = Utf8               out
+  #16 = Utf8               Ljava/io/PrintStream;
+  #17 = Methodref          #18.#19        // java/io/PrintStream.println:(I)V
+  #18 = Class              #20            // java/io/PrintStream
+  #19 = NameAndType        #21:#22        // println:(I)V
+  #20 = Utf8               java/io/PrintStream
+  #21 = Utf8               println
+  #22 = Utf8               (I)V
+  #23 = Methodref          #24.#25        // java/lang/Integer.intValue:()I
+  #24 = Class              #26            // java/lang/Integer
+  #25 = NameAndType        #27:#28        // intValue:()I
+  #26 = Utf8               java/lang/Integer
+  #27 = Utf8               intValue
+  #28 = Utf8               ()I
+  #29 = Methodref          #24.#30        // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+  #30 = NameAndType        #31:#32        // valueOf:(I)Ljava/lang/Integer;
+  #31 = Utf8               valueOf
+  #32 = Utf8               (I)Ljava/lang/Integer;
+  #33 = Class              #34            // e0113_Lambda_11_cath_var/AppLambdaDemo13
+  #34 = Utf8               e0113_Lambda_11_cath_var/AppLambdaDemo13
+  #35 = Utf8               Code
+  #36 = Utf8               LineNumberTable
+  #37 = Utf8               LocalVariableTable
+  #38 = Utf8               this
+  #39 = Utf8               Le0113_Lambda_11_cath_var/AppLambdaDemo13;
+  #40 = Utf8               run
+  #41 = Utf8               num
+  #42 = Utf8               I
+  #43 = Utf8               myLambda
+  #44 = Utf8               Le0113_Lambda_11_cath_var/MyFuncInterface13;
+  #45 = Utf8               LocalVariableTypeTable
+  #46 = Utf8               Le0113_Lambda_11_cath_var/MyFuncInterface13<Ljava/lang/Integer;>;
+  #47 = Utf8               lambda$run$0
+  #48 = Utf8               (ILjava/lang/Integer;)Ljava/lang/Integer;
+  #49 = Utf8               n
+  #50 = Utf8               Ljava/lang/Integer;
+  #51 = Utf8               v
+  #52 = Utf8               SourceFile
+  #53 = Utf8               AppLambdaDemo13.java
+  #54 = Utf8               BootstrapMethods
+  #55 = MethodHandle       6:#56          // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #56 = Methodref          #57.#58        // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #57 = Class              #59            // java/lang/invoke/LambdaMetafactory
+  #58 = NameAndType        #60:#61        // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #59 = Utf8               java/lang/invoke/LambdaMetafactory
+  #60 = Utf8               metafactory
+  #61 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #62 = MethodType         #63            //  (Ljava/lang/Object;)Ljava/lang/Object;
+  #63 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #64 = MethodHandle       6:#65          // REF_invokeStatic e0113_Lambda_11_cath_var/AppLambdaDemo13.lambda$run$0:(ILjava/lang/Integer;)Ljava/lang/Integer;
+  #65 = Methodref          #33.#66        // e0113_Lambda_11_cath_var/AppLambdaDemo13.lambda$run$0:(ILjava/lang/Integer;)Ljava/lang/Integer;
+  #66 = NameAndType        #47:#48        // lambda$run$0:(ILjava/lang/Integer;)Ljava/lang/Integer;
+  #67 = MethodType         #68            //  (Ljava/lang/Integer;)Ljava/lang/Integer;
+  #68 = Utf8               (Ljava/lang/Integer;)Ljava/lang/Integer;
+  #69 = Utf8               InnerClasses
+  #70 = Class              #71            // java/lang/invoke/MethodHandles$Lookup
+  #71 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #72 = Class              #73            // java/lang/invoke/MethodHandles
+  #73 = Utf8               java/lang/invoke/MethodHandles
+  #74 = Utf8               Lookup
+{
+  public e0113_Lambda_11_cath_var.AppLambdaDemo13();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Le0113_Lambda_11_cath_var/AppLambdaDemo13;
+
+  public void run();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: bipush        10
+         2: istore_1
+         3: iload_1
+         4: invokedynamic #7,  0              // InvokeDynamic #0:func:(I)Le0113_Lambda_11_cath_var/MyFuncInterface13;
+         9: astore_2
+        10: getstatic     #11                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        13: iload_1
+        14: invokevirtual #17                 // Method java/io/PrintStream.println:(I)V
+        17: return
+      LineNumberTable:
+        line 5: 0
+        line 7: 3
+        line 13: 10
+        line 15: 17
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      18     0  this   Le0113_Lambda_11_cath_var/AppLambdaDemo13;
+            3      15     1   num   I
+           10       8     2 myLambda   Le0113_Lambda_11_cath_var/MyFuncInterface13;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           10       8     2 myLambda   Le0113_Lambda_11_cath_var/MyFuncInterface13<Ljava/lang/Integer;>;
+
+  private static java.lang.Integer lambda$run$0(int, java.lang.Integer);
+    descriptor: (ILjava/lang/Integer;)Ljava/lang/Integer;
+    flags: (0x100a) ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=3, args_size=2
+         0: iload_0
+         1: aload_1
+         2: invokevirtual #23                 // Method java/lang/Integer.intValue:()I
+         5: iadd
+         6: istore_2
+         7: iload_2
+         8: invokestatic  #29                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        11: areturn
+      LineNumberTable:
+        line 8: 0
+        line 10: 7
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      12     0   num   I
+            0      12     1     n   Ljava/lang/Integer;
+            7       5     2     v   I
+}
+SourceFile: "AppLambdaDemo13.java"
+BootstrapMethods:
+  0: #55 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #62 (Ljava/lang/Object;)Ljava/lang/Object;
+      #64 REF_invokeStatic e0113_Lambda_11_cath_var/AppLambdaDemo13.lambda$run$0:(ILjava/lang/Integer;)Ljava/lang/Integer;
+      #67 (Ljava/lang/Integer;)Ljava/lang/Integer;
+InnerClasses:
+  public static final #74= #70 of #72;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+#############################################################################################
+package e0113_Lambda_11_cath_var;
+
+public class AppLambdaDemo13 {
+    public void run() {
+        int num = 10;
+
+        MyFuncInterface13<Integer> myLambda = n -> {
+            int v = num + n;
+//            num++;
+            return v;
+        };
+
+        System.out.println(num);
+//        num = 9;
+    }
+}
+---------------------------------------------------------------------------------------------

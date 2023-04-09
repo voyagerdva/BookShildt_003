@@ -1,0 +1,33 @@
+Classfile /E:/__PROJECT__/JAVA/BookShildt_003/out/production/BookShildt_003/e0103_Lambda/MyNumber3.class
+  Last modified 18 февр. 2023 г.; size 137 bytes
+  SHA-256 checksum 9aa8fbfa75d2dc6e93c51365b6efa5e50557473ed01c9f1f7e462f04d94deed4
+  Compiled from "MyNumber3.java"
+public interface e0103_Lambda.MyNumber3
+  minor version: 0
+  major version: 61
+  flags: (0x0601) ACC_PUBLIC, ACC_INTERFACE, ACC_ABSTRACT
+  this_class: #1                          // e0103_Lambda/MyNumber3
+  super_class: #3                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 1, attributes: 1
+Constant pool:
+  #1 = Class              #2              // e0103_Lambda/MyNumber3
+  #2 = Utf8               e0103_Lambda/MyNumber3
+  #3 = Class              #4              // java/lang/Object
+  #4 = Utf8               java/lang/Object
+  #5 = Utf8               getValue
+  #6 = Utf8               ()D
+  #7 = Utf8               SourceFile
+  #8 = Utf8               MyNumber3.java
+{
+  public abstract double getValue();
+    descriptor: ()D
+    flags: (0x0401) ACC_PUBLIC, ACC_ABSTRACT
+}
+SourceFile: "MyNumber3.java"
+#############################################################################################
+package e0103_Lambda;
+
+public interface MyNumber3 {
+    double getValue();
+}
+---------------------------------------------------------------------------------------------
