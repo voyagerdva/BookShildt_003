@@ -1,7 +1,6 @@
-package e0119_TestApiStream;
+package e0119_Test_for_StreamAPI_14_exercises;
 
-import org.w3c.dom.ls.LSOutput;
-
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
@@ -39,8 +38,10 @@ import java.util.Map;
  *   словарь списков: {отдел = [компании, ...] }
  *
  *
- * 3. Определить в каждом отделе - какие компании расположены в тех же городах, что и работники отделов
+ * 3. Определить по каждому отделу:
+ *   какие компании расположены в тех же городах, что и работники отделов               ДЕЛАЮ...
  *
+ *      { отдел = { город = [компания, работник] }
  *
  *
  *
@@ -64,11 +65,11 @@ import java.util.Map;
  * **/
 
 
-public class TestApiStreamMine {
+public class App19_Test_for_StreamAPI_14_exercises {
     int MAX_TASK_SUMMA = 100; // 1000, и 10000
     List<Department> department = new ArrayList();
 
-    public TestApiStreamMine() {
+    public App19_Test_for_StreamAPI_14_exercises() {
         List<Address19> addressList = new ArrayList<>();
         List<Product> productList = new ArrayList<>();
         List<Company> companyList = new ArrayList<>();
@@ -107,27 +108,102 @@ public class TestApiStreamMine {
 //        === ЗАДАЧА №2 - МОЕ РЕШЕНИЕ ====================================================================
         print_2_Companies_on_Departments_storages(companyList, departmentList);
 
+//        === ЗАДАЧА №3 - МОЕ РЕШЕНИЕ ====================================================================
+ /** 3. Определить по каждому отделу:
+ *   какие компании расположены в тех же городах, что и работники отделов               ДЕЛАЮ...
+ *
+ *      { отдел = [
+ *                   { город = [ [компания, ... ], [работник, ... ] ] },
+  *                  { город = [ [компания, ... ], [работник, ... ] ] },
+  *                  ...
+  *               ]
+*/
 
-    }
+        System.out.println("\n>.. Задача 3. По каждому отделу: какие компании расположены в тех же городах, что и работники отделов");
 
-    private void print_1_CitiesDepartmentsEmployees_4_with_param3_if_D1_D3_renamed_concat(List<Department> departmentList) {
-        System.out.println();
-        BinaryOperator<? super Stream<Employee>> param3 = (k,v) -> {
-            System.out.println("param3");
-            return Stream.concat(k,v);
-        };
+        // 1) создание мапы Компании - Город (простая прямая мапа)
+        System.out.println("\n# mapCompanyToCity : Компания = город:");
+
+        Map<String, List<String>> mapCityToCompanies = companyList.stream()
+                .collect(Collectors.toMap(
+                        e -> e.address.city,
+                        e -> e.name,
+                        (e1, e2) -> e1.concat(" " + e2)
+                ))
+                .entrySet().stream()
+                .collect(Collectors.toMap(
+                        el -> el.getKey(),
+                        el -> Arrays.stream(el.getValue().split(" ")).collect(Collectors.toList())
+                ));
+
+        Map<String, List<String>> mapCityToEmploee = employeeList.stream()
+                .collect(Collectors.toMap(
+                        emp -> emp.address.city,
+                        emp -> emp.id,
+                        (e1, e2) -> e1.concat(" " + e2)
+                ))
+                .entrySet().stream()
+                .collect(Collectors.toMap(
+                        el -> el.getKey(),
+                        el -> Arrays.stream(el.getValue().split(" ")).collect(Collectors.toList())
+                ));
 
         departmentList.stream()
                 .collect(Collectors.toMap(
-                        k -> k.name,
-                        v -> v.employeeses.stream(),
-                        param3
-                        )
-                )
-                .forEach((k, v) -> System.out.println(k + " :: " + ((Stream<Employee>) v)
-                        .map(se -> se.firstName + " - " + se.address.city)
-                        .collect(Collectors.toList())))
-        ;
+                        dep -> dep.name,
+                        dep -> dep.employeeses.stream()
+                                .map(emp -> emp.address.city)
+                                .collect(Collectors.toMap(
+                                        city -> city,
+                                        city -> mapCityToCompanies.get(city),
+                                        (e1, e2) -> Stream.concat(e1.stream(), e2.stream()).toList()
+                                ))
+
+                ))
+                .entrySet().stream().forEach(System.out::println);
+
+
+/**      { отдел = [
+*                   { город = [ [компания, ... ], [работник, ... ] ] },
+*                  { город = [ [компания, ... ], [работник, ... ] ] },
+*                  ...
+*               ]
+*/
+
+
+//        mapCompanyToID.entrySet().stream().forEach(System.out::println);
+
+        // 2) создание мапы - Отделы - ID (простая прямая мапа)
+//        System.out.println("\n# mapDepsToID : Отделы и id-шники продуктов на их складах:");
+//        Map<String, List<String>> mapDepsToID = departmentList.stream()
+//                .collect(Collectors.toMap(
+//                        k -> k.name,
+//                        v -> v.productRegestry.keySet().stream()
+//                                .map(pr -> pr.id)
+//                                .collect(Collectors.toList())
+//                ));
+//        mapDepsToID.forEach((k,v) -> System.out.println(k + " : " + v));
+
+
+        // 3) - создание списка (через создание сета) с уникальным набором значений всех элементов из списков значений оригинального словаря
+//        List<String> listValuesIDs = mapCompanyToID.values().stream()
+//                .map(v -> v.stream().toList())
+//                .flatMap(List::stream)
+//                .collect(Collectors.toSet()).stream()
+//                .toList()
+//                .stream().sorted().toList();
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
@@ -152,18 +228,18 @@ public class TestApiStreamMine {
     }
 
     private void fillEmployeeList(List<Address19> addressList, List<Employee> employeeList) {
-        employeeList.add(new Employee("1", "Camil", "Brown", addressList.get(0)));
-        employeeList.add(new Employee("2", "Serg", "Han", addressList.get(1)));
-        employeeList.add(new Employee("3", "Aron", "Gold", addressList.get(2)));
-        employeeList.add(new Employee("4", "Mark", "Silver", addressList.get(3)));
-        employeeList.add(new Employee("5", "Sam", "Hash", addressList.get(4)));
-        employeeList.add(new Employee("6", "Jak", "Bold", addressList.get(8)));
-        employeeList.add(new Employee("7", "Pol", "Stak", addressList.get(6)));
-        employeeList.add(new Employee("8", "Mark", "Peer", addressList.get(7)));
-        employeeList.add(new Employee("9", "Emile", "Brown", addressList.get(3)));
-        employeeList.add(new Employee("10", "Sofie", "Peer", addressList.get(0)));
-        employeeList.add(new Employee("11", "Aron", "Peer", addressList.get(9)));
-        employeeList.add(new Employee("12", "Mari", "Peer", addressList.get(0)));
+        employeeList.add(new Employee("001", "Tirion", "Lannister", addressList.get(0)));
+        employeeList.add(new Employee("002", "Jaime", "Lannister", addressList.get(1)));
+        employeeList.add(new Employee("003", "Serseya", "Lannister", addressList.get(2)));
+        employeeList.add(new Employee("004", "Jon", "Snow", addressList.get(3)));
+        employeeList.add(new Employee("005", "Robb", "Stark", addressList.get(4)));
+        employeeList.add(new Employee("006", "Sansa", "Stark", addressList.get(8)));
+        employeeList.add(new Employee("007", "Arya", "Stark", addressList.get(6)));
+        employeeList.add(new Employee("008", "Robert", "Barateon", addressList.get(7)));
+        employeeList.add(new Employee("009", "Stannis", "Barateon", addressList.get(3)));
+        employeeList.add(new Employee("010", "Sandor", "Kligan", addressList.get(0)));
+        employeeList.add(new Employee("011", "Viserion", "Targarien", addressList.get(9)));
+        employeeList.add(new Employee("012", "Dejeneris", "Targarien", addressList.get(0)));
     }
 
     private void fillProductList(List<Product> productList) {
@@ -184,7 +260,7 @@ public class TestApiStreamMine {
         companyList.add(new Company(addressList.get(11), "Pepsi", productList.subList(1, 7).stream().map(p -> p.id).toList()));
         companyList.add(new Company(addressList.get(12), "Poridge", productList.subList(4, 6).stream().map(p -> p.id).toList()));
         companyList.add(new Company(addressList.get(13), "IBM", productList.subList(4, 9).stream().map(p -> p.id).toList()));
-        companyList.add(new Company(addressList.get(14), "AMD", productList.subList(5, 6).stream().map(p -> p.id).toList()));
+        companyList.add(new Company(addressList.get(15), "AMD", productList.subList(5, 6).stream().map(p -> p.id).toList()));
         companyList.add(new Company(addressList.get(15), "WWW", productList.subList(8, 9).stream().map(p -> p.id).toList()));
         companyList.add(new Company(addressList.get(15), "Arrow", productList.subList(5, 9).stream().map(p -> p.id).toList()));
     }
@@ -224,6 +300,7 @@ public class TestApiStreamMine {
 
 
     //==================================================================================================
+
     private void print_0_CitiesWithComponies(List<Company> companyList) {
         System.out.println(">.. Задача 0. Города, в которых расположены фирмы.");
 
@@ -246,7 +323,6 @@ public class TestApiStreamMine {
 
         System.out.println("========================================================");
     }
-
     private void print_0_CItiesWithCompanies2(List<Company> companyList) {
         System.out.println(">.. Задача 0. Города, в которых расположены фирмы. Второй вариант.");
 
@@ -324,6 +400,26 @@ public class TestApiStreamMine {
                             return v.employeeses.stream();
                         },
                         param3))
+                .forEach((k, v) -> System.out.println(k + " :: " + ((Stream<Employee>) v)
+                        .map(se -> se.firstName + " - " + se.address.city)
+                        .collect(Collectors.toList())))
+        ;
+    }
+
+    private void print_1_CitiesDepartmentsEmployees_4_with_param3_if_D1_D3_renamed_concat(List<Department> departmentList) {
+        System.out.println();
+        BinaryOperator<? super Stream<Employee>> param3 = (k,v) -> {
+            System.out.println("param3");
+            return Stream.concat(k,v);
+        };
+
+        departmentList.stream()
+                .collect(Collectors.toMap(
+                                k -> k.name,
+                                v -> v.employeeses.stream(),
+                                param3
+                        )
+                )
                 .forEach((k, v) -> System.out.println(k + " :: " + ((Stream<Employee>) v)
                         .map(se -> se.firstName + " - " + se.address.city)
                         .collect(Collectors.toList())))
@@ -433,6 +529,7 @@ public class TestApiStreamMine {
                 .entrySet().stream()
                 .forEach(System.out::println);
     }
+
 
 
 

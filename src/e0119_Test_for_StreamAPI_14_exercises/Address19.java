@@ -1,4 +1,4 @@
-package e0119_TestApiStream;
+package e0119_Test_for_StreamAPI_14_exercises;
 
 public class Address19 {
     String city;
