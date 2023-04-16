@@ -1,6 +1,7 @@
 package e0119_Test_for_StreamAPI_14_exercises;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentMap;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -21,12 +22,13 @@ public class App19_Test_for_StreamAPI_14_exercises {
 
     private void exercisesRun(Initialize init) {
 //      ===== ЗАДАЧА №0 - ГОТОВОЕ РЕШЕНИЕ ДЛЯ ПРИМЕРА: ==========================================================
-//        ex_0_CitiesWithComponies(init.companyList);
-//        ex_0_CItiesWithCompanies2(init.companyList);
+        ex_0_CitiesWithComponies(init.companyList);
+        ex_0_CItiesWithCompanies2(init.companyList);
 
 
 //      === ЗАДАЧА №1 - Города, в которых живут сотрудники каждого отдела (мое решение) ===========================
-//        ex_1_CitiesDepartmentsEmployees(init.departmentList);
+        System.out.println("\n>.. Задача 1. Города, в которых живут сотрудники каждого отдела:");
+        ex_1_CitiesDepartmentsEmployees(init.departmentList);
 
 //        --- другие варианты, от Андрея: -----------------
 //        ex_1_CitiesDepartmentsEmployees_2(init.departmentList);
@@ -35,16 +37,28 @@ public class App19_Test_for_StreamAPI_14_exercises {
 
 
 //      === ЗАДАЧА №2 - Компании, продукты которых есть на складах каждого отдела (мое решение) =====================
-//        ex_2_Companies_on_Departments_storages(init.companyList, init.departmentList);
+        System.out.println("\n>.. Задача 2. Компании, продукты которых есть на складах каждого отдела");
+        ArrayList<Map> listMapsDepsCompaniesIDs = ex_2_Companies_on_Departments_storages(init.companyList, init.departmentList);
+        listMapsDepsCompaniesIDs.get(1).entrySet().stream().forEach(System.out::println);
 
 //      === ЗАДАЧА №3 - какие компании расположены в тех же городах, что и работники каждого отдела (мое решение) =====
-//        ex_3_Companies_and_Emploees_in_same_Cities_of_each_Departmens(init.companyList, init.employeeList, init.departmentList);
+        System.out.println("\n>.. Задача 3. По каждому отделу: какие компании расположены в тех же городах, что и работники отделов");
+        ex_3_Companies_and_Emploees_in_same_Cities_of_each_Departmens(init.companyList, init.employeeList, init.departmentList);
 
 //      === ЗАДАЧА №4 - Сумму всех товаров по каждому отделу (мое решение) =================================
-//        ex_4_TotalProducts_in_each_Departments(init);
+        System.out.println("\n>.. Задача 4. По каждому отделу - сумму всех товаров:");
+        ex_4_TotalProducts_in_each_Departments(init);
 
 //      === ЗАДАЧА №5 - Суммы всех товаров в отделе по каждой компании (мое решение) =======================
         System.out.println("\n>.. Задача 5. Суммы всех товаров в отделе по каждой компании");
+        ex_5_Qntity_of_products_of_each_Companie_in_each_Departments(init);
+
+
+    }
+
+
+    //==========================================================================================================
+    private void ex_5_Qntity_of_products_of_each_Companie_in_each_Departments(Initialize init) {
 
         /**          { отдел = [
          *                         { компания = кол-во товаров },
@@ -56,17 +70,19 @@ public class App19_Test_for_StreamAPI_14_exercises {
          */
 
         // 1) мапа: Компании - ID товаров (простоя прямая мапа)
-        System.out.println("\n# mapCompanyToID : Компании и списки id-шников продуктов, которые они производят:");
+//        System.out.println("\n# mapCompanyToID : Компании и списки id-шников продуктов, которые они производят:");
         Map<String, List<String>> mapCompanyToID = init.companyList.stream()
                 .collect(Collectors.toMap(
                         k -> k.name,
                         v -> v.productIdList.stream()
                                 .collect(Collectors.toList())
                 ));
-        mapCompanyToID.entrySet().stream().forEach(System.out::println);
+//        mapCompanyToID.entrySet().stream().forEach(System.out::println);
+
+
 
         // 2) мапа: Отделы - ID товаров (простая прямая мапа)
-        System.out.println("\n# mapDepsToID : Отделы и id-шники продуктов на их складах:");
+//        System.out.println("\n# mapDepsToID : Отделы и id-шники продуктов на их складах:");
         Map<String, List<String>> mapDepsToID = init.departmentList.stream()
                 .collect(Collectors.toMap(
                         k -> k.name,
@@ -74,59 +90,43 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                 .map(pr -> pr.id)
                                 .collect(Collectors.toList())
                 ));
-        mapDepsToID.forEach((k, v) -> System.out.println(k + " : " + v));
+//        mapDepsToID.forEach((k, v) -> System.out.println(k + " : " + v));
 
 
         // 3) Мапа: Отделы = Компании в них (return из 2-й задачи)
-        System.out.println("\n# mapDepsToCompany : Отделы = список компаний:");
-        Map<String, Set<String>> mapDepsToCompany = ex_2_Companies_on_Departments_storages(init.companyList, init.departmentList);
-        mapDepsToCompany.entrySet().stream().forEach(System.out::println);
+//        System.out.println("\n# mapDepsToCompany : Отделы = список компаний:");
+        ArrayList<Map> depsOrIDsToCompanies = ex_2_Companies_on_Departments_storages(init.companyList, init.departmentList);
+
+        Map mapIdToCompany = depsOrIDsToCompanies.get(0);
+//        mapIdToCompany.entrySet().stream().forEach(System.out::println);
+        Map mapDepsToCompany = depsOrIDsToCompanies.get(1);
+//        mapDepsToCompany.entrySet().stream().forEach(System.out::println);
+
+
+//        // 4) Мапа: ID товара = его количество - НЕВЕРНЫЙ ВАРИАНТ!!! Вроде показывает как надо
+//        // но до отдельных элементов не добраться. Сплошной Object, и все. Оставил как образец ошибки!!!
+//        init.departmentList.stream()
+//                .collect(Collectors.toMap(
+//                        dep -> dep.name,
+//                        dep -> {
+//                            ArrayList list = new ArrayList();
+//                            Map<String, Integer> mapa = dep.productRegestry.entrySet().stream()
+//                                    .collect(Collectors.toMap(
+//                                            product -> product.getKey().id,
+//                                            product -> product.getValue()
+//                                    ));
+//                            list.add(mapa);
+//                            return list;
+//                        }
+//                ))
+//        .entrySet().stream().forEach(System.out::println);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // 4) Мапа: ID товара = его количество
-        System.out.println("\n>.. Отдел = { ID товара = его количество }:");
-        Map<String, ArrayList> mapDepsToIDsToQntity = init.departmentList.stream()
-                .collect(Collectors.toMap(
-                        dep -> dep.name,
-                        dep -> {
-                            ArrayList list = new ArrayList();
-                            Map<String, Integer> mapa = dep.productRegestry.entrySet().stream()
-                                    .collect(Collectors.toMap(
-                                            product -> product.getKey().id,
-                                            product -> product.getValue()
-                                    ));
-                            list.add(mapa);
-                            return list;
-                        }
-                ));
-        mapDepsToIDsToQntity.entrySet().stream().forEach(System.out::println);
-
-
-
-        System.out.println("\n>.. 1) :");
-        Map<String, Map<String, Integer>> mapDepsToIDsToQntity1 = init.departmentList.stream()
+//        // 5) Мапа: Отделы = { ID товара = его количество } - ВЕРНЫЙ ВАРИАНТ!!!
+//        System.out.println("\n>.. mapDepsToIDsToQntity : Отдел = { ID товара = его количество }:");
+        Map<String, Map<String, Integer>> mapDepsToIDsToQntity = init.departmentList.stream()
                 .collect(Collectors.toMap(
                         dep -> dep.name,
                         dep -> dep.productRegestry.keySet().stream()
@@ -140,88 +140,34 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                                 .get(0)
                                 ))
                 ));
-        mapDepsToIDsToQntity1.entrySet().stream().forEach(System.out::println);
+//        mapDepsToIDsToQntity.entrySet().stream().forEach(System.out::println);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // 4) Мапа: Отделы = что-то еще:
-        System.out.println("\n# что-то еще:");
-        Map<String, ArrayList> mapDepsToCompanyToIDs = init.departmentList.stream()
+//        System.out.println("\n>.. 1) mapDepsToCompanyToIDs (попытка №2):");
+        Map<String, Map<Object, Integer>> mapDepsToCompanyToIDs = init.departmentList.stream()
                 .collect(Collectors.toMap(
                         dep -> dep.name,
-                        dep -> {
-                            ArrayList list = new ArrayList();
-                            list.add(
-                                    mapDepsToCompany.get(dep.name).stream()
-                                            .collect(Collectors.toMap(
-                                                            comp -> comp,
-                                                            comp -> mapCompanyToID.get(comp).stream()
-                                                                    .filter(id -> mapDepsToID.get(dep.name).contains(id))
-                                                                    .collect(Collectors.toList())
-                                                    )
-                                            )
-                            );
-                            return list;
-                        }
+                        dep -> dep.productRegestry.entrySet().stream()
+                                .collect(Collectors.toList()).stream()
+                                .collect(Collectors.toMap(
+                                        e -> {
+                                            int index = (int) (Math.random() * ((ArrayList) (mapIdToCompany.get(e.getKey().id))).size());
+                                            return ((ArrayList) (mapIdToCompany.get(e.getKey().id))).get(index);
+                                        },
+                                        e -> e.getValue(),
+                                        (a, b) -> a + b
+                                ))
+
                 ));
         mapDepsToCompanyToIDs.entrySet().stream().forEach(System.out::println);
 
 
-
-
-
-
-
-
-
-
-
-
-        System.out.println("\n>.. 2) :");
-        mapDepsToIDsToQntity.values().stream()
-//                .map(v -> v.stream().)
-//                .map(x -> x.toString())
-                .forEach(System.out::println);
-
-
-        System.out.println("\n>.. 3) :");
-        Object var = mapDepsToIDsToQntity.get("D4").get(0);
-        System.out.println(var);
-
-
     }
-
-
-    //==========================================================================================================
 
     private void ex_4_TotalProducts_in_each_Departments(Initialize init) {
         //        словарь интов.         { отдел = сумма_товаров, ... }
-        System.out.println("\n>.. Задача 4. По каждому отделу - сумму всех товаров:");
 
-        System.out.println("\n>.. Отделы = всего товаров в них:");
+//        System.out.println("\n>.. Отделы = всего товаров в них:");
         Map<String, Integer> mapDepsToQuantity = init.departmentList.stream()
                 .collect(Collectors.toMap(
                         dep -> dep.name,
@@ -230,9 +176,10 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                 .reduce((a, b) -> a + b)
                                 .get()
                 ));
-        mapDepsToQuantity.entrySet().stream().forEach(System.out::println);
+//        mapDepsToQuantity.entrySet().stream().forEach(System.out::println);
 
-        System.out.println("\n>.. Отделы = список id товаров и список их количествов (просто для отработки и полезного примера):");
+
+//        System.out.println("\n>.. Отделы = список id товаров и список их количествов (просто для отработки и полезного примера):");
         Map<String, List<String>> mapDepsToIDsAndQtitys = init.departmentList.stream()
                 .collect(Collectors.toMap(
                         dep -> dep.name,
@@ -249,7 +196,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
         mapDepsToIDsAndQtitys.entrySet().stream().forEach(System.out::println);
 
 
-        System.out.println("\n>.. Общее кол-во товаров во всех отделах всего (просто для отработки полезного примера):");
+//        System.out.println("\n>.. Общее кол-во товаров во всех отделах всего (просто для отработки полезного примера):");
         Integer qntityTotal = init.departmentList.stream()
                 .flatMap(dep -> dep.productRegestry.entrySet().stream()
                         .map(x -> x.getValue())
@@ -257,7 +204,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                 .collect(Collectors.toList())
                 .stream()
                 .reduce((x, y) -> x + y).get();
-        System.out.println(qntityTotal);
+//        System.out.println(qntityTotal);
 
 //        return mapDepsToIDsAndQtitys;
     }
@@ -274,10 +221,9 @@ public class App19_Test_for_StreamAPI_14_exercises {
          *
          */
 
-        System.out.println("\n>.. Задача 3. По каждому отделу: какие компании расположены в тех же городах, что и работники отделов");
 
         // 1) мапа: Компании - Город (простая прямая мапа)
-        System.out.println("\n# mapCompanyToCity : Компания = город:");
+//        System.out.println("\n# mapCompanyToCity : Компания = город:");
 
         // 1) Города и Компании
         Map<String, List<String>> mapCityToCompanies = companyList.stream()
@@ -291,8 +237,8 @@ public class App19_Test_for_StreamAPI_14_exercises {
                         el -> el.getKey(),
                         el -> Arrays.stream(el.getValue().split(" ")).collect(Collectors.toList())
                 ));
-        mapCityToCompanies.entrySet().stream().forEach(System.out::println);
-        System.out.println();
+//        mapCityToCompanies.entrySet().stream().forEach(System.out::println);
+//        System.out.println();
 
         // 2) Города и сотрудники
         Map<String, List<String>> mapCityToEmploees = employeeList.stream()
@@ -306,8 +252,8 @@ public class App19_Test_for_StreamAPI_14_exercises {
                         el -> el.getKey(),
                         el -> Arrays.stream(el.getValue().split(" ")).collect(Collectors.toList())
                 ));
-        mapCityToEmploees.entrySet().stream().forEach(System.out::println);
-        System.out.println();
+//        mapCityToEmploees.entrySet().stream().forEach(System.out::println);
+//        System.out.println();
 
 
         // 3) Отделы, города и компании в них
@@ -323,12 +269,11 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                 ))
 
                 ));
-
-        mapDepsToCityesAndCompanies.entrySet().stream().forEach(System.out::println);
+//        mapDepsToCityesAndCompanies.entrySet().stream().forEach(System.out::println);
 
 
         // 4) Отделы и их сотрудники
-        System.out.println("\n>.. Отделы и их сотрудники:");
+//        System.out.println("\n>.. Отделы и их сотрудники:");
         Map<String, List<String>> mapDepsToEmploeeses = departmentList.stream()
                 .collect(Collectors.toMap(
                         dep -> dep.name,
@@ -336,10 +281,10 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                 .map(emp -> emp.id)
                                 .collect(Collectors.toList())
                 ));
-        mapDepsToEmploeeses.entrySet().stream().forEach(System.out::println);
+//        mapDepsToEmploeeses.entrySet().stream().forEach(System.out::println);
 
-        System.out.println("\n>.. Отделы = города = компании и сотрудники:");
-        departmentList.stream()
+//        System.out.println("\n>.. Отделы = города = компании и сотрудники:");
+        Map<String, List<Map.Entry<String, ArrayList>>> mapDepsToCompaniesAndEmploees = departmentList.stream()
                 .collect(Collectors.toMap(
                                 dep -> dep.name,
                                 dep -> dep.employeeses.stream()
@@ -361,22 +306,20 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                                 }
                                         )).entrySet().stream().toList()
                         )
-                )
-
-                .entrySet().stream().forEach(System.out::println);
+                );
+        mapDepsToCompaniesAndEmploees.entrySet().stream().forEach(System.out::println);
     }
 
-    private Map<String, Set<String>> ex_2_Companies_on_Departments_storages(List<Company> companyList, List<Department> departmentList) {
+    private ArrayList<Map> ex_2_Companies_on_Departments_storages(List<Company> companyList, List<Department> departmentList) {
         /**
          2. Компании продукты которых есть на складах каждого отдела.             <---
          словарь:
          {отдел = [компании, ...] }
          */
-//        System.out.println("\n>.. Задача 2. Компании, продукты которых есть на складах каждого отдела");
 
 
-//        System.out.println("\n# mapCompanyToID : Компании и списки id-шников продуктов, которые они производят:");
         // 1) мапа: Компании - ID (простоя прямая мапа)
+//        System.out.println("\n# mapCompanyToID : Компании и списки id-шников продуктов, которые они производят:");
         Map<String, List<String>> mapCompanyToID = companyList.stream()
                 .collect(Collectors.toMap(
                         k -> k.name,
@@ -397,7 +340,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
 //        mapDepsToID.forEach((k,v) -> System.out.println(k + " : " + v));
 
 
-        // 3) - создание списка (через создание сета) с уникальным набором значений всех элементов из списков значений оригинального словаря
+        // 3) - Список (через создание сета) с уникальным набором значений всех элементов из списков значений оригинального словаря
         List<String> listValuesIDs = mapCompanyToID.values().stream()
                 .map(v -> v.stream().toList())
                 .flatMap(List::stream)
@@ -410,7 +353,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
 
         HashMap<String, List<String>> mapIdToCompanyHash = new HashMap<>();
 
-        // 4) создаем новый инверсный словарь через for и put:
+        // 4) mapIdToCompanyHash - Словарь, инверсный словарю mapCompanyToID через for и put:
 //        System.out.println("\n>.. Способ 1: через for, put");
         for (int j = 0; j < listValuesIDs.size(); j++) {
             String keyInverse = listValuesIDs.get(j);
@@ -421,7 +364,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
         }
 //        mapIdToCompanyHash.entrySet().stream().forEach(System.out::println);
 
-        // 5) создаем такой же словарь, только через чисто toMap -> HashMap:
+        // 5) mapIdToCompanyHash: такой же словарь, только через чисто toMap -> HashMap:
 //        System.out.println("\n>.. Способ 2: через чисто toMap -> HashMap");
         mapIdToCompanyHash = listValuesIDs.stream()
                 .collect(Collectors.toMap(
@@ -437,7 +380,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                 ));
 //        mapIdToCompanyHash.entrySet().stream().forEach(System.out::println);
 
-        // 6) 3-й способ. создаем такой же словарь, только через чисто toMap. Оставляем этот, поскольку
+        // 6) mapIdToCompany: 3-й способ. такой же словарь, только через чисто toMap. Оставляем этот, поскольку
         // с HashMap потом не будет работать подстановка ID-to-CompanyList:
 //        System.out.println("\n>.. Способ 3: через чисто toMap");
         Map<String, List<String>> mapIdToCompany = listValuesIDs.stream()
@@ -465,8 +408,15 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                     .collect(Collectors.toSet());
                         }
                 ));
-//        mapDepsToCompany.entrySet().stream().forEach(System.out::println);
-        return mapDepsToCompany;
+//        mapDepsToCompany.entrySet().stream().forEach(System.out::println); // <--- ГЛАВНЫЙ ОТВЕТ
+
+
+
+
+        ArrayList<Map> listMaps = new ArrayList<>();
+        listMaps.add(mapIdToCompany);
+        listMaps.add(mapDepsToCompany);
+        return listMaps;
     }
 
     private void ex_1_CitiesDepartmentsEmployees_4_with_param3_if_D1_D3_renamed_concat(List<Department> departmentList) {
@@ -539,17 +489,15 @@ public class App19_Test_for_StreamAPI_14_exercises {
     }
 
     private void ex_1_CitiesDepartmentsEmployees(List<Department> departmentList) {
-        System.out.println("\n>.. Задача 1. Города, в которых живут сотрудники каждого отдела:");
-
-        departmentList.stream()
+        Map<String, ConcurrentMap<String, String>> mapDepsToCitiesToEmploees = departmentList.stream()
                 .collect(Collectors.toMap(
                         k -> k.name,
                         v -> v.employeeses.stream()
                                 .collect(Collectors.toConcurrentMap( //toMap тоже работает !!!
                                         e -> e.firstName,
                                         e -> e.address.city
-                                ))))
-                .forEach((k, v) -> System.out.println(k + " :: " + v));
+                                ))));
+        mapDepsToCitiesToEmploees.forEach((k, v) -> System.out.println(k + " :: " + v));
     }
 
     private void ex_0_CItiesWithCompanies2(List<Company> companyList) {

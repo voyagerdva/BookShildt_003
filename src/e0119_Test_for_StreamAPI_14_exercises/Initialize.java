@@ -149,15 +149,15 @@ public class Initialize {
     }
 
     private void fillProductList(List<Product> productList) {
-        productList.add(new Product("0000", "mirror", 23.30));      // 0
-        productList.add(new Product("0001", "hammer", 13.05));      // 1
-        productList.add(new Product("0002", "soap", 24.11));        // 2
-        productList.add(new Product("0003", "armchear", 12.73));    // 3
-        productList.add(new Product("0004", "table", 54.0));        // 4
-        productList.add(new Product("0005", "water", 11.3));        // 5
-        productList.add(new Product("0006", "chocolate", 70.0));    // 6
-        productList.add(new Product("0007", "cackes", 29.37));      // 7
-        productList.add(new Product("0008", "bread", 82.74));       // 8
+        productList.add(new Product("0000", "mirror", 23.30));      // 0 Coca
+        productList.add(new Product("0001", "hammer", 13.05));      // 1 Coca Pepsi
+        productList.add(new Product("0002", "soap", 24.11));        // 2 Coca Pepsi
+        productList.add(new Product("0003", "armchear", 12.73));    // 3      Pepsi
+        productList.add(new Product("0004", "table", 54.0));        // 4 IBM  Pepsi Poridge
+        productList.add(new Product("0005", "water", 11.3));        // 5 IBM Arrow AMD Pepsi Poridge
+        productList.add(new Product("0006", "chocolate", 70.0));    // 6 IBM Arrow     Pepsi
+        productList.add(new Product("0007", "cackes", 29.37));      // 7 IBM Arrow
+        productList.add(new Product("0008", "bread", 82.74));       // 8 IBM Arrow
         productList.add(new Product("0009", "salt", 31.21));        // 9
     }
 
