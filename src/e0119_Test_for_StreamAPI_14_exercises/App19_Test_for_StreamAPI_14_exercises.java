@@ -39,7 +39,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
 //      === ЗАДАЧА №2 - Компании, продукты которых есть на складах каждого отдела (мое решение) =====================
         System.out.println("\n>.. Задача 2. Компании, продукты которых есть на складах каждого отдела");
         ArrayList<Map> listMapsDepsCompaniesIDs = ex_2_Companies_on_Departments_storages(init.companyList, init.departmentList);
-        listMapsDepsCompaniesIDs.get(1).entrySet().stream().forEach(System.out::println);
+        listMapsDepsCompaniesIDs.get(1).entrySet().forEach(System.out::println);
 
 //      === ЗАДАЧА №3 - какие компании расположены в тех же городах, что и работники каждого отдела (мое решение) =====
         System.out.println("\n>.. Задача 3. По каждому отделу: какие компании расположены в тех же городах, что и работники отделов");
@@ -77,7 +77,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                         v -> v.productIdList.stream()
                                 .collect(Collectors.toList())
                 ));
-//        mapCompanyToID.entrySet().stream().forEach(System.out::println);
+//        mapCompanyToID.entrySet().forEach(System.out::println);
 
 
 
@@ -98,9 +98,9 @@ public class App19_Test_for_StreamAPI_14_exercises {
         ArrayList<Map> depsOrIDsToCompanies = ex_2_Companies_on_Departments_storages(init.companyList, init.departmentList);
 
         Map mapIdToCompany = depsOrIDsToCompanies.get(0);
-//        mapIdToCompany.entrySet().stream().forEach(System.out::println);
+//        mapIdToCompany.entrySet().forEach(System.out::println);
         Map mapDepsToCompany = depsOrIDsToCompanies.get(1);
-//        mapDepsToCompany.entrySet().stream().forEach(System.out::println);
+//        mapDepsToCompany.entrySet().forEach(System.out::println);
 
 
 //        // 4) Мапа: ID товара = его количество - НЕВЕРНЫЙ ВАРИАНТ!!! Вроде показывает как надо
@@ -119,7 +119,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
 //                            return list;
 //                        }
 //                ))
-//        .entrySet().stream().forEach(System.out::println);
+//        .entrySet().forEach(System.out::println);
 
 
 
@@ -140,7 +140,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                                 .get(0)
                                 ))
                 ));
-//        mapDepsToIDsToQntity.entrySet().stream().forEach(System.out::println);
+//        mapDepsToIDsToQntity.entrySet().forEach(System.out::println);
 
 
 //        System.out.println("\n>.. 1) mapDepsToCompanyToIDs (попытка №2):");
@@ -159,7 +159,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                 ))
 
                 ));
-        mapDepsToCompanyToIDs.entrySet().stream().forEach(System.out::println);
+        mapDepsToCompanyToIDs.entrySet().forEach(System.out::println);
 
 
     }
@@ -176,7 +176,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                 .reduce((a, b) -> a + b)
                                 .get()
                 ));
-//        mapDepsToQuantity.entrySet().stream().forEach(System.out::println);
+//        mapDepsToQuantity.entrySet().forEach(System.out::println);
 
 
 //        System.out.println("\n>.. Отделы = список id товаров и список их количествов (просто для отработки и полезного примера):");
@@ -193,7 +193,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                             return list;
                         }
                 ));
-        mapDepsToIDsAndQtitys.entrySet().stream().forEach(System.out::println);
+        mapDepsToIDsAndQtitys.entrySet().forEach(System.out::println);
 
 
 //        System.out.println("\n>.. Общее кол-во товаров во всех отделах всего (просто для отработки полезного примера):");
@@ -237,7 +237,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                         el -> el.getKey(),
                         el -> Arrays.stream(el.getValue().split(" ")).collect(Collectors.toList())
                 ));
-//        mapCityToCompanies.entrySet().stream().forEach(System.out::println);
+//        mapCityToCompanies.entrySet().forEach(System.out::println);
 //        System.out.println();
 
         // 2) Города и сотрудники
@@ -252,7 +252,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                         el -> el.getKey(),
                         el -> Arrays.stream(el.getValue().split(" ")).collect(Collectors.toList())
                 ));
-//        mapCityToEmploees.entrySet().stream().forEach(System.out::println);
+//        mapCityToEmploees.entrySet().forEach(System.out::println);
 //        System.out.println();
 
 
@@ -269,7 +269,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                 ))
 
                 ));
-//        mapDepsToCityesAndCompanies.entrySet().stream().forEach(System.out::println);
+//        mapDepsToCityesAndCompanies.entrySet().forEach(System.out::println);
 
 
         // 4) Отделы и их сотрудники
@@ -281,7 +281,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                 .map(emp -> emp.id)
                                 .collect(Collectors.toList())
                 ));
-//        mapDepsToEmploeeses.entrySet().stream().forEach(System.out::println);
+//        mapDepsToEmploeeses.entrySet().forEach(System.out::println);
 
 //        System.out.println("\n>.. Отделы = города = компании и сотрудники:");
         Map<String, List<Map.Entry<String, ArrayList>>> mapDepsToCompaniesAndEmploees = departmentList.stream()
@@ -307,7 +307,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                         )).entrySet().stream().toList()
                         )
                 );
-        mapDepsToCompaniesAndEmploees.entrySet().stream().forEach(System.out::println);
+        mapDepsToCompaniesAndEmploees.entrySet().forEach(System.out::println);
     }
 
     private ArrayList<Map> ex_2_Companies_on_Departments_storages(List<Company> companyList, List<Department> departmentList) {
@@ -326,7 +326,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                         v -> v.productIdList.stream()
                                 .collect(Collectors.toList())
                 ));
-//        mapCompanyToID.entrySet().stream().forEach(System.out::println);
+//        mapCompanyToID.entrySet().forEach(System.out::println);
 
         // 2) мапа: - Отделы - ID (простая прямая мапа)
 //        System.out.println("\n# mapDepsToID : Отделы и id-шники продуктов на их складах:");
@@ -362,7 +362,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                     .collect(Collectors.toList());
             mapIdToCompanyHash.put(keyInverse, valueInverse);
         }
-//        mapIdToCompanyHash.entrySet().stream().forEach(System.out::println);
+//        mapIdToCompanyHash.entrySet().forEach(System.out::println);
 
         // 5) mapIdToCompanyHash: такой же словарь, только через чисто toMap -> HashMap:
 //        System.out.println("\n>.. Способ 2: через чисто toMap -> HashMap");
@@ -378,7 +378,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                         (v1, v2) -> v1,
                         HashMap::new
                 ));
-//        mapIdToCompanyHash.entrySet().stream().forEach(System.out::println);
+//        mapIdToCompanyHash.entrySet().forEach(System.out::println);
 
         // 6) mapIdToCompany: 3-й способ. такой же словарь, только через чисто toMap. Оставляем этот, поскольку
         // с HashMap потом не будет работать подстановка ID-to-CompanyList:
@@ -393,7 +393,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                             return valueInverse;
                         }
                 ));
-//        mapIdToCompany.entrySet().stream().forEach(System.out::println);
+//        mapIdToCompany.entrySet().forEach(System.out::println);
 
 
         // 6) мапа: отделы - компании в них
@@ -408,7 +408,7 @@ public class App19_Test_for_StreamAPI_14_exercises {
                                     .collect(Collectors.toSet());
                         }
                 ));
-//        mapDepsToCompany.entrySet().stream().forEach(System.out::println); // <--- ГЛАВНЫЙ ОТВЕТ
+//        mapDepsToCompany.entrySet().forEach(System.out::println); // <--- ГЛАВНЫЙ ОТВЕТ
 
 
 
