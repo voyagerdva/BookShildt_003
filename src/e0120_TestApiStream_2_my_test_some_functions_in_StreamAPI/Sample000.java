@@ -12,7 +12,7 @@ public class Sample000 {
 //                .forEach(System.out::println);
 //        // 2, 8, 14, 20, 26, 32
 //
-//
+    //
 //        Stream.Builder<Integer> streamBuider = Stream.<Integer>builder()
 //                .add(0)
 //                .add(1)

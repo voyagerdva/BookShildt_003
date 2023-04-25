@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Sample007 {
     public static void main(String[] args) throws IOException {
@@ -80,6 +81,7 @@ public class Sample007 {
 
 
         //==============================================================
+        System.out.println();
         Character H = 'H';
         Character e = 'e';
         Character l = 'l';
@@ -93,9 +95,9 @@ public class Sample007 {
 
         char[] hello = {H, e, e, l, l, o,};
 
-        for (int i = 0; i < hello.length; i++) {
-            System.out.println(hello);
-        }
+//        for (int i = 0; i < hello.length; i++) {
+//            System.out.println(hello);
+//        }
         System.out.println(hello);
 
         String s4 = String.valueOf(H)
@@ -124,19 +126,89 @@ public class Sample007 {
 
 
         //==============================================================
+        System.out.println();
+        System.out.println(Runtime.getRuntime().freeMemory());
+        System.out.println(Runtime.getRuntime().maxMemory());
+        System.out.println(Runtime.getRuntime().totalMemory());
+        System.out.println(Runtime.getRuntime().availableProcessors());
+//        Runtime.getRuntime().halt(-1);
+        System.out.println(Runtime.getRuntime().getClass());
 
+        //==============================================================
+        System.out.println();
+
+        Runtime r1 = Runtime.getRuntime();
+        long mem1;
+        long mem2;
+        int qty = 1000;
+        Integer someints[] = new Integer[qty];
+
+        System.out.println("Всего памяти: " + r1.totalMemory());
+        mem1 = r1.freeMemory();
+
+        System.out.println("Свободной памяти иходно: " + mem1);
+        r1.gc();
+        mem1 = r1.freeMemory();
+        System.out.println("Свободной памяти после очистки gc(): " + mem1);
+
+        for (int i = 0; i < qty; i++) {
+            someints[i] = Integer.valueOf(new String(String.valueOf(i))); // выделить память для объектов типа Integer
+        }
+
+        mem2 = r1.freeMemory();
+        System.out.println("Свободной памяти после выделения: " + mem2);
+        System.out.println("Использовано памяти для выделения: " + (mem1 - mem2));
+
+        // отвергнуть объекты типа Integer:
+        for (int i = 0; i < qty; i++) {
+            someints[i] = null;
+        }
+        r1.gc(); // запустить сборку мусора gc()
+
+        mem2 = r1.freeMemory();
+        System.out.println("Свободной памяти после очистки отвергнутых объектов типа Integer: " + mem2);
 
         //==============================================================
 
+        Runtime r2 = Runtime.getRuntime();
+        Process p2 = null;
+        String name = "Notepad";
+
+        try {
+            p2 = r2.exec(name);
+            Thread.sleep(1000);
+//            p2.waitFor();
+            p2.destroy();
+        } catch (Exception exception) {
+            System.out.println("Error run");
+        }
+//        System.out.println("Notepad возвратил " + p2.exitValue());
+
+        Runtime.Version ver = Runtime.version();
+        // вывести номера отдельных версий
+        System.out.println("Ocнoвнoй номер версии: "
+                + ver.major());
+        System.out.println("Дoпoлнитeльный номер версии: "
+                + ver.minor());
+        System.out.println("Hoмep версии системы защиты: "
+                + ver.security());
+
+        //==============================================================
+        System.out.println();
+        Map<String, String> env = new ProcessBuilder().environment();
+        env.entrySet().forEach(System.out::println);
 
         //==============================================================
 
+        System.out.println();
+        try {
+            ProcessBuilder proc = new ProcessBuilder("notepad.exe", "testfile.txt");
+            proc.start();
 
-        //==============================================================
-
-
-        //==============================================================
-
+        } catch (Exception e3) {
+            System.out.println("\n>.. Ошибка запуска Notepad");
+            e3.printStackTrace();
+        }
 
         //==============================================================
 
