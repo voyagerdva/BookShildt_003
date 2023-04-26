@@ -206,21 +206,45 @@ public class Sample007 {
             proc.start();
 
         } catch (Exception e3) {
-            System.out.println("\n>.. Ошибка запуска Notepad");
+            System.out.println("\n>.. 0шибка запуска Notepad");
             e3.printStackTrace();
         }
 
         //==============================================================
 
+        System.out.println();
+
+        byte[] a4 = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74};
+        byte[] b4 = {77, 77, 77, 77, 77, 77, 77, 77, 77, 77};
+
+        System.out.println("a4 = " + new String(a4));
+        System.out.println("b4 = " + new String(b4));
+        System.arraycopy(a4, 0, b4, 0, a4.length);
+
+        System.out.println("a4 = " + new String(a4));
+        System.out.println("b4 = " + new String(b4));
+        System.arraycopy(a4, 0, a4, 1, a4.length - 1);
+
+        System.arraycopy(b4, 1, b4, 0, b4.length - 1);
+        System.out.println("a4 = " + new String(a4));
+        System.out.println("b4 = " + new String(b4) );
+        //==============================================================
+
+        System.out.println();
+        System.out.println(System.getProperty("user.name"));
+        System.out.println(System.getProperty("user.home"));
+        System.out.println(System.getProperty("user.dir"));
+        System.out.println(System.getProperty("path.separator"));
+        System.out.println(System.getProperty("os.version"));
+        System.out.println(System.getProperty("os.version"));
+        System.out.println(System.getProperty("os.arch"));
+        System.out.println(System.getProperty("line.separator"));
 
         //==============================================================
 
 
         //==============================================================
 
-
-        //==============================================================
-
         //==============================================================
         //==============================================================
 
@@ -239,5 +263,5 @@ public class Sample007 {
         //==============================================================
 
 
+        }
     }
-}
