@@ -1,4 +1,4 @@
-package e0122_TestApiStream_4_GroupingBy;
+package e0123_TestApiStream_4_GroupingBy;
 
 import java.util.*;
 import java.util.stream.Collectors;

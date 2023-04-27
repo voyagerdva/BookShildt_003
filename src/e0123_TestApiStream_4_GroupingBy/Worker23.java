@@ -1,4 +1,4 @@
-package e0122_TestApiStream_4_GroupingBy;
+package e0123_TestApiStream_4_GroupingBy;
 
 public class Worker23 {
     private String name;
