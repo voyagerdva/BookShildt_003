@@ -14,7 +14,7 @@ public class Practice_Task3_25 {
 
     }
 
-    private static Integer findMaxDigitsCount(String line) {
+    public static Integer findMaxDigitsCount(String line) {
         int result = 0;
         int counter = 0;
         for (int i = 0; i < line.length(); i++) {
