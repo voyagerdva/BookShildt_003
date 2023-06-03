@@ -1,15 +1,11 @@
 package e0126_dmdev_level2_10_In_Output;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ReaderRunner25 {
+public class ReaderRunner26 {
     public static void main(String[] args) throws IOException {
         Path path = Path.of("resources", "test.txt");
         try (Stream<String> lines = Files.lines(path)) {

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public class Practice_Task1_25 {
+public class Practice_Task1_26 {
     public static final String VOWELS = "аоуыэяёюие";
 
     public static void main(String[] args) throws IOException {

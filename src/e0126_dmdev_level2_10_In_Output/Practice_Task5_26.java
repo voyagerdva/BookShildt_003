@@ -4,13 +4,12 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.util.stream.Stream;
 
 import static java.nio.file.StandardOpenOption.APPEND;
 import static java.nio.file.StandardOpenOption.CREATE;
 
-public class Practice_Task5_25 {
+public class Practice_Task5_26 {
     public static void main(String[] args) {
         Path path = Path.of("src", "e0126_dmdev_level2_10_In_Output", "Practice_Task4_25.java");
         Path result = Path.of("resources", "Task4.java");

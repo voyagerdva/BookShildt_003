@@ -1,14 +1,11 @@
 package e0126_dmdev_level2_10_In_Output;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public class WriterRunner25 {
+public class WriterRunner26 {
     public static void main(String[] args) throws IOException {
 //        File file = Path.of("resources", "writer.poem").toFile();
         Path path = Path.of("resources", "writer2.poem");
