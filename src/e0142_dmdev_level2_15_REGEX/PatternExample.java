@@ -5,8 +5,10 @@ import java.util.regex.Pattern;
 
 public class PatternExample {
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("\\d{3}");
-        Matcher matcher = pattern.matcher("123");
+        String phoneNumber = "+375 (29) 898-12-13";
+
+        Pattern pattern = Pattern.compile("\\+375 \\(\\d{2}\\) \\d{3}-\\d{2}-\\d{2 }");
+        Matcher matcher = pattern.matcher(phoneNumber);
 
         System.out.println(matcher.matches());
     }
